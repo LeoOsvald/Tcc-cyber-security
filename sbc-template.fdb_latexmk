@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber sbc-template"] 1759883660.77918 "sbc-template.bcf" "sbc-template.bbl" "sbc-template" 1759884187.66099 0
-  "sbc-template.bcf" 1759884187 115139 fbcca7283c724ae9e2ae588c96656e77 "pdflatex"
-  "sbc-template.bib" 1758031567 2884 d552bb7432c8c8ce347b4ceb5e13f2c5 ""
+["biber sbc-template"] 1761079255.7101 "sbc-template.bcf" "sbc-template.bbl" "sbc-template" 1761079347.71833 0
+  "sbc-template.bcf" 1761079347 114788 59631b6c852f8b6ad31e84b8b0b7202f "pdflatex"
+  "sbc-template.bib" 1761079199 4670 99fe16273aabb0720362e1fa2bf8303a ""
   (generated)
   "sbc-template.bbl"
   "sbc-template.blg"
   (rewritten before read)
-["pdflatex"] 1759884186.242 "c:/Users/Leonardo/Desktop/TCC/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1759884187.66143 0
+["pdflatex"] 1761079346.37527 "c:/Users/Leonardo/Desktop/TCC/sbc-template.tex" "sbc-template.pdf" "sbc-template" 1761079347.71876 0
   "C:/Users/Leonardo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1759884044 83486 9208647d054da4672a050e7ed94c9aa5 ""
   "C:/Users/Leonardo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk" 1759879612 20028 5dba672c1e05d326e1cca284bd78c666 ""
   "C:/Users/Leonardo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1200.pk" 1759879611 24152 93e01f2d848271a1f52cebe34f61ab39 ""
@@ -22,7 +22,6 @@
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr8c.tfm" 1136783054 1352 fa28a7e6d323c65ce7d13d5342ff6be2 ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr8r.tfm" 1136783054 4408 25b74d011a4c66b7f212c0cc3c90061b ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmr8t.tfm" 1136783054 6672 e3ab9e37e925f3045c9005e6d1473d56 ""
-  "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmrc8t.tfm" 1136783054 16648 7e91c60ebf91b9c60e16ef52b3070f9c ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmri8r.tfm" 1136783054 4640 532ca3305aad10cc01d769f3f91f1029 ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/times/ptmri8t.tfm" 1136783054 6944 94c55ad86e6ea2826f78ba2240d50df9 ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
@@ -60,7 +59,6 @@
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmbi8t.vf" 1136783054 2324 51908dae6e03953a90119973962f0e4d ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr8c.vf" 1136783054 3556 8a9a6dcbcd146ef985683f677f4758a6 ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmr8t.vf" 1136783054 2348 91706c542228501c410c266421fbe30c ""
-  "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmrc8t.vf" 1136783054 3608 eb048a634708cbf5eda8def0ce93c7bb ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/adobe/times/ptmri8t.vf" 1136783054 2328 6cd7df782b09b29cfc4d93e55b6b9a59 ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/public/bera/fvmb8t.vf" 1075568880 2156 2ffbcc3d25d55597f2891dda61e4040a ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/vf/public/bera/fvmr8t.vf" 1075568940 2156 58631a68efc4afbec92c522ba77a542f ""
@@ -168,14 +166,14 @@
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/tex/latex/ucs/utf8x.def" 1700127473 8944 e3433baec74c4b7b278c6b6a547ff9ec ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "c:/Users/Leonardo/Desktop/TCC/sbc-template.tex" 1759884185 17137 a53389a5835d57771d1f09e06d5dc41d ""
+  "c:/Users/Leonardo/Desktop/TCC/sbc-template.tex" 1761079345 22552 20a563e97229d9adbc8af9fe5d28d3d4 ""
   "fig1.jpg" 1758031551 39933 e1bbe31b6df35507bbaf99995585d636 ""
-  "sbc-template.aux" 1759884187 4888 019560f7b775682fadfd4b65dfd54712 "pdflatex"
-  "sbc-template.bbl" 1759883662 11549 47c5b8a9a85d34d9c3f21b2d286abd7f "biber sbc-template"
-  "sbc-template.out" 1759884187 1678 290016c2fe4d74dcfe9de3248c1caf92 "pdflatex"
-  "sbc-template.run.xml" 1759884187 2501 fa891eac0640529ab1093f7c3cfe4e61 "pdflatex"
+  "sbc-template.aux" 1761079347 4145 234dfc227caa1f701c19a3b7dd66933e "pdflatex"
+  "sbc-template.bbl" 1761079257 8530 fe876f35fcbdcb0186ca956e04a3cb20 "biber sbc-template"
+  "sbc-template.out" 1761079347 1542 3cbe249195a83044e37f7572359adbca "pdflatex"
+  "sbc-template.run.xml" 1761079347 2501 fa891eac0640529ab1093f7c3cfe4e61 "pdflatex"
   "sbc-template.sty" 1758031570 5044 b8aa4a360cf9c420370e8ac3e85daf34 ""
-  "sbc-template.tex" 1759884185 17137 a53389a5835d57771d1f09e06d5dc41d ""
+  "sbc-template.tex" 1761079345 22552 20a563e97229d9adbc8af9fe5d28d3d4 ""
   "sty/cc_atitus.sty" 1758031590 3869 3b0bd4d974092453d5a8052d1f22e394 ""
   (generated)
   "sbc-template.aux"
