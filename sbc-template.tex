@@ -149,7 +149,8 @@ O XSS, que é um outro tipo de Injeção de código malicioso, ocorre quando uma
 \section{Trabalhos Relacionados}
 
 
-Neste item serão apresentados os principais trabalhos que possuem uma relação com o assunto definido neste estudo
+Neste item serão apresentados os principais trabalhos que possuem uma relação com o tema definido neste estudo. Os 5 trabalhos selecionados abrangem a maioria dos assuntos chave para a evolução da pesquisa.
+Os estudos abaixo citam boas práticas, preocupações, e métodos adequados para previnir possíveis vulnerabilidades em aplicações Web, assim como explicações sobre as vulnerabilidades mais comuns.
 % Itens com marcadores
 \begin{itemize}
      \item \textbf{Vulnerabilidade em Aplicações Web \cite{almeida}}
@@ -191,7 +192,20 @@ Este trabalho buscou explicar e detalhar as 10 principais vulnerabilidades lista
 O estudo foi baseado em uma revisão aprofundada de cada uma das vulnerabilidades do Top 10 do OWASP, como injeção de SQL, quebra de autenticação, exposição de dados sensíveis e configurações inseguras. Para cada item, foram apresentados exemplos de como os ataques ocorrem e medidas práticas de prevenção, como o uso de prepared statements, validação de entradas e a implementação de logging e monitoramento.
 
 A pesquisa concluiu que a maioria das vulnerabilidades pode ser evitada com práticas de desenvolvimento seguro, atualizações regulares e configurações adequadas. Além disso, destacou que ataques bem-sucedidos não só causam perdas financeiras diretas, mas também abalam a confiança dos clientes. Investir em segurança desde o início do desenvolvimento é essencial para proteger tanto os negócios quanto os usuários finais.
+
+    \item \textbf{Segurança Em Aplicações WEB: Uma abordagem prática para identificar vulnerabilidades \cite{Santos2023}}
+    
+A segurança em aplicações web é um tema de extrema importância na atualidade, mas ainda é negligenciada em muitos ambientes acadêmicos e profissionais, especialmente em empresas de pequeno e médio porte. A falta de conhecimento técnico e a priorização de funcionalidades em detrimento da segurança tornam os sistemas vulneráveis a ataques, o que pode resultar em prejuízos financeiros, danos à reputação e problemas legais.
+
+Este trabalho teve como objetivo principal demonstrar, de forma prática e acessível, o processo de análise de segurança em uma aplicação web. Para isso, foi desenvolvido e analisado o sistema RentX – uma plataforma de aluguel de carros – com o intuito de identificar vulnerabilidades e propor melhorias que garantam um nível mínimo de segurança, servindo como exemplo para desenvolvedores e empresas.
+
+Foi desenvolvida uma aplicação web completa, o RentX, utilizando tecnologias modernas como React, Node.js, Express e PostgreSQL. Em seguida, realizou-se um teste de penetração utilizando a ferramenta Zed Attack Proxy (ZAP), que permitiu uma análise dinâmica da aplicação em busca de vulnerabilidades com base no OWASP Top 10.
+
+A análise revelou a existência de vulnerabilidades de baixo e médio risco, como a ausência de cabeçalhos de segurança (CSP, X-Content-Type-Options), bibliotecas desatualizadas e configurações inadequadas. Concluiu-se que a maioria das falhas poderia ser corrigida com ajustes simples de configuração e atualizações, reforçando que a segurança deve ser integrada desde as fases iniciais do desenvolvimento. O trabalho mostrou que mesmo aplicações bem estruturadas podem conter brechas significativas, destacando a necessidade de testes de segurança contínuos.
+
 \end{itemize}
+
+A escolha dos 5 trabalhos acima se dá pela a correlação entre as pequisas e o tema abordado neste artigo, onde cada um dos tópicos cita pontos importantes para a presente pesquisa, como segurança, pentest, autenticação, tipos de vulnerabilidades e como as previnir, etc...
 
 \section{Materiais e Métodos}
     Tecnologias, instrumentos e procedimentos que serão usados no estudo. O Algoritmo~\ref{alg:id_algo} se refere ao método de ordenação \texttt{Bubblesort} expresso em linguagem \texttt{Python}.
@@ -232,7 +246,7 @@ Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TC
 
  % Figura
     % https://pt.overleaf.com/learn/latex/Inserting_Images
-    \begin{figure}[h!] % h! pede para o compilador tentar incluir a figura na posição em que foi declarada;
+     \begin{figure}[h!] % h! pede para o compilador tentar incluir a figura na posição em que foi declarada;
         \centering
         \includegraphics[width=0.4\textwidth]{fig1.jpg} % altere a width (intervalo entre 0.0 e 1), caso a imagem não fique na posição correta
         \caption{Exemplo de uso de figura}

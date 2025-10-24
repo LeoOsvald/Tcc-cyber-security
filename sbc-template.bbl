@@ -195,6 +195,48 @@
       \verb https://repositorio.ufc.br/bitstream/riufc/62466/1/2021_tcc_ffsampaio.pdf
       \endverb
     \endentry
+    \entry{Santos2023}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a767c904ccd5c18050258eb648bd357e}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={Matheus\bibnamedelima Gama},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0,
+           prefix={dos},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+      }
+      \list{institution}{1}{%
+        {Universidade Federal da Paraíba}%
+      }
+      \list{location}{1}{%
+        {João Pessoa, PB}%
+      }
+      \strng{namehash}{a767c904ccd5c18050258eb648bd357e}
+      \strng{fullhash}{a767c904ccd5c18050258eb648bd357e}
+      \strng{fullhashraw}{a767c904ccd5c18050258eb648bd357e}
+      \strng{bibnamehash}{a767c904ccd5c18050258eb648bd357e}
+      \strng{authorbibnamehash}{a767c904ccd5c18050258eb648bd357e}
+      \strng{authornamehash}{a767c904ccd5c18050258eb648bd357e}
+      \strng{authorfullhash}{a767c904ccd5c18050258eb648bd357e}
+      \strng{authorfullhashraw}{a767c904ccd5c18050258eb648bd357e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Trabalho de Conclusão de Curso}
+      \field{title}{Segurança em Aplicações Web: Uma Abordagem Prática para Identificar Vulnerabilidades}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://repositorio.ufpb.br/jspui/handle/123456789/31664
+      \endverb
+      \verb{url}
+      \verb https://repositorio.ufpb.br/jspui/handle/123456789/31664
+      \endverb
+    \endentry
   \enddatalist
   \missing{duarte2022}
 \endrefsection
