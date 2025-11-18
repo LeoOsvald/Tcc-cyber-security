@@ -91,6 +91,96 @@
       \verb https://arxiv.org/abs/2012.09960
       \endverb
     \endentry
+    \entry{docker}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c5fd214cdd0d2b3b4272e73b022ba5c2}{%
+           family={Docker},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{fullhash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{fullhashraw}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{bibnamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorbibnamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authornamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorfullhash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorfullhashraw}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.docker.com/
+      \endverb
+      \verb{url}
+      \verb https://www.docker.com/
+      \endverb
+    \endentry
+    \entry{duarte2020}{thesis}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=12669a95cdff5b26d1159c37c864ace0}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Gileno\bibnamedelima Cordeiro},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Instituto Federal do Rio Grande do Norte}%
+      }
+      \strng{namehash}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{fullhash}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{fullhashraw}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{bibnamehash}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{authorbibnamehash}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{authornamehash}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{authorfullhash}{12669a95cdff5b26d1159c37c864ace0}
+      \strng{authorfullhashraw}{12669a95cdff5b26d1159c37c864ace0}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{bookpagination}{sheet}
+      \field{title}{Análise de Vulnerabilidades sobre a Aplicação Web do CINTE-RN: Um Estudo de Caso}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://memoria.ifrn.edu.br/bitstream/handle/1044/2291/TCC%20Final-%20GILENO%20CORDEIRO%20DUARTE.pdf
+      \endverb
+      \verb{url}
+      \verb https://memoria.ifrn.edu.br/bitstream/handle/1044/2291/TCC%20Final-%20GILENO%20CORDEIRO%20DUARTE.pdf
+      \endverb
+    \endentry
+    \entry{hydra}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0a79d2e788f647cf8c8bee8cad4bf94e}{%
+           family={Hydra},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{fullhash}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{fullhashraw}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{bibnamehash}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{authorbibnamehash}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{authornamehash}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{authorfullhash}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \strng{authorfullhashraw}{0a79d2e788f647cf8c8bee8cad4bf94e}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.kali.org/tools/hydra/
+      \endverb
+      \verb{url}
+      \verb https://www.kali.org/tools/hydra/
+      \endverb
+    \endentry
     \entry{joseph2024}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=638cd0ab0a35c4fbd7c3f0028da89149}{%
@@ -157,6 +247,92 @@
       \endverb
       \verb{url}
       \verb https://rosario.ufma.br/jspui/bitstream/123456789/7552/1/Marcos_Vinicius_Correia_Leite.pdf
+      \endverb
+    \endentry
+    \entry{sqlmap}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=a3a45acb1293048f98832a52ca2706ef}{%
+           family={Map},
+           familyi={M\bibinitperiod},
+           given={SQL},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{fullhash}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{fullhashraw}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{bibnamehash}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{authorbibnamehash}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{authornamehash}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{authorfullhash}{a3a45acb1293048f98832a52ca2706ef}
+      \strng{authorfullhashraw}{a3a45acb1293048f98832a52ca2706ef}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://sqlmap.org/
+      \endverb
+      \verb{url}
+      \verb https://sqlmap.org/
+      \endverb
+    \endentry
+    \entry{mt3}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1a3c10f446d38916e952b4a71bda661b}{%
+           family={Metasploitable3},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{fullhash}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{fullhashraw}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{bibnamehash}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{authorbibnamehash}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{authornamehash}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{authorfullhash}{1a3c10f446d38916e952b4a71bda661b}
+      \strng{authorfullhashraw}{1a3c10f446d38916e952b4a71bda661b}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Análise de Vulnerabilidades sobre a Aplicação Web do CINTE-RN: Um Estudo de Caso}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/rapid7/metasploitable3
+      \endverb
+      \verb{url}
+      \verb https://github.com/rapid7/metasploitable3
+      \endverb
+    \endentry
+    \entry{nmap2}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9a8780281d3e37c597cee7ca58bfd435}{%
+           family={Nmap},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{fullhash}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{fullhashraw}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{bibnamehash}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{authorbibnamehash}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{authornamehash}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{authorfullhash}{9a8780281d3e37c597cee7ca58bfd435}
+      \strng{authorfullhashraw}{9a8780281d3e37c597cee7ca58bfd435}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://nmap.org/
+      \endverb
+      \verb{url}
+      \verb https://nmap.org/
       \endverb
     \endentry
     \entry{sampaio2021}{thesis}{}{}
@@ -237,8 +413,94 @@
       \verb https://repositorio.ufpb.br/jspui/handle/123456789/31664
       \endverb
     \endentry
+    \entry{juice}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=0847fef0656a16b6ae307aa91d0ac3ec}{%
+           family={Shop},
+           familyi={S\bibinitperiod},
+           given={OWASP\bibnamedelima Juice},
+           giveni={O\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{fullhash}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{fullhashraw}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{bibnamehash}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{authorbibnamehash}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{authornamehash}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{authorfullhash}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \strng{authorfullhashraw}{0847fef0656a16b6ae307aa91d0ac3ec}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://owasp.org/www-project-juice-shop/
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-project-juice-shop/
+      \endverb
+    \endentry
+    \entry{vscode}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=92ce826772dd138cdcbd6cbc6d5b29c4}{%
+           family={VSCode},
+           familyi={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{fullhash}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{fullhashraw}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{bibnamehash}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{authorbibnamehash}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{authornamehash}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{authorfullhash}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \strng{authorfullhashraw}{92ce826772dd138cdcbd6cbc6d5b29c4}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://code.visualstudio.com/
+      \endverb
+      \verb{url}
+      \verb https://code.visualstudio.com/
+      \endverb
+    \endentry
+    \entry{zap}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=568d32c78de18dac51f089ce1ed14093}{%
+           family={Zap},
+           familyi={Z\bibinitperiod},
+           given={OWASP},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{568d32c78de18dac51f089ce1ed14093}
+      \strng{fullhash}{568d32c78de18dac51f089ce1ed14093}
+      \strng{fullhashraw}{568d32c78de18dac51f089ce1ed14093}
+      \strng{bibnamehash}{568d32c78de18dac51f089ce1ed14093}
+      \strng{authorbibnamehash}{568d32c78de18dac51f089ce1ed14093}
+      \strng{authornamehash}{568d32c78de18dac51f089ce1ed14093}
+      \strng{authorfullhash}{568d32c78de18dac51f089ce1ed14093}
+      \strng{authorfullhashraw}{568d32c78de18dac51f089ce1ed14093}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://owasp.org/www-chapter-dorset/assets/presentations/2020-01/20200120-OWASPDorset-ZAP-DanielW.pdf
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-chapter-dorset/assets/presentations/2020-01/20200120-OWASPDorset-ZAP-DanielW.pdf
+      \endverb
+    \endentry
   \enddatalist
-  \missing{duarte2022}
 \endrefsection
 \endinput
 

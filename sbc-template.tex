@@ -173,7 +173,7 @@ Durante o desenvolvimento, o autor realizou testes práticos em uma aplicação 
 
 O trabalho conclui que o uso de ferramentas como o OWASP ZAP é fundamental para a detecção precoce de falhas, permitindo que desenvolvedores corrijam problemas antes que sejam explorados por atacantes. Sampaio reforça a necessidade de incorporar práticas de teste de segurança contínuo no ciclo de desenvolvimento de software.
 
-    \item \textbf{Análise de Vulnerabilidades sobre a Aplicação Web do CINTE-RN: Um Estudo de Caso \cite{duarte2022}}
+    \item \textbf{Análise de Vulnerabilidades sobre a Aplicação Web do CINTE-RN: Um Estudo de Caso \cite{duarte2020}}
     
 Com o aumento constante de ataques cibernéticos, a segurança de aplicações web se tornou uma preocupação crítica, especialmente porque muitas falhas surgem quando a segurança não é uma prioridade durante o desenvolvimento do software.
 
@@ -208,38 +208,53 @@ A análise revelou a existência de vulnerabilidades de baixo e médio risco, co
 A escolha dos 5 trabalhos acima se dá pela a correlação entre as pequisas e o tema abordado neste artigo, onde cada um dos tópicos cita pontos importantes para a presente pesquisa, como segurança, pentest, autenticação, tipos de vulnerabilidades e como as previnir, etc...
 
 \section{Materiais e Métodos}
-    Tecnologias, instrumentos e procedimentos que serão usados no estudo. O Algoritmo~\ref{alg:id_algo} se refere ao método de ordenação \texttt{Bubblesort} expresso em linguagem \texttt{Python}.
+Nesta seção serão estabelecidos os métodos adotados para a validação científica desta pesquisa, bem como as ferramentas utilizadas para identificação, exploração e mitigação das vulnerabilidades encontradas, tendo como principal referencial o \emph{OWASP Top 10}.
 
-    Uma lista numérica:
-    \begin{enumerate}
-        \item Item 1
-        \item Item 2
-    \end{enumerate}
+\subsection{Máquinas virtuais disponíveis na WEB}
+Para a validação e análise das vulnerabilidades estudadas, serão utilizadas máquinas virtuais e aplicações deliberadamente vulneráveis, obtidas em repositórios públicos (GitHub) para fins educacionais. 
 
-    Uma lista definida com letras sequenciais:
-    \begin{enumerate}[label=\alph*)]
-        \item Item 1
-        \item Item 2
-    \end{enumerate}    
+Visando simular um ambiente próximo ao encontrado em cenários reais, será empregada uma rede local composta por duas aplicações vulneráveis executadas em um único equipamento (servidor/notebook) e atacadas a partir de outro dispositivo na mesma rede. A abordagem do pentest adotada combina dois modos: \emph{gray-box} para uma das aplicações e \emph{black-box} para a outra, permitindo avaliar diferenças na detecção e exploração de falhas sob distintos níveis de informação.
 
-    % Código-fonte formatado
-    % Ver: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
-    \begin{lstlisting}[  
-        %float,
-        language=Python, 
-        frame=single, 
-        numbers=left,
-        caption={Método de ordenação Bubblesort},
-        label={alg:id_algo} % id para referenciar
-        ]        
-def bubble_sort(alist):
-    for i in range(len(alist)-1,0,-1):
-        for j in range(i):
-            if alist[i]>alist[i+1]:
-                temp = alist[i]
-                alist[i] = alist[i+1]
-                alist[i+1] = temp    
-    \end{lstlisting}
+
+\subsection{Cenário Black Box: Metasploitable 3 }
+
+Para simular um teste de penetração do tipo \textbf{Black Box}, onde o analista não possui conhecimento prévio da infraestrutura interna, foi utilizado o \textbf{\cite{mt3}}. Este ambiente é uma máquina virtual intencionalmente vulnerável, baseada em Windows Server, que expõe uma variedade de serviços e aplicações, incluindo tecnologias do ecossistema Microsoft.
+
+\begin{itemize}
+    \item \textbf{Justificativa da Escolha:} A escolha do Metasploitable 3 se deu por sua natureza como um "alvo desconhecido". Ele simula um servidor corporativo real, permitindo que a análise siga as fases de um pentest ético (reconhecimento, varredura, exploração) sem qualquer informação privilegiada.
+    
+    \item \textbf{Abordagem (Black Box):} O teste foi iniciado conhecendo apenas o endereço IP da máquina. A partir daí, todas as informações sobre serviços, tecnologias e vulnerabilidades foram obtidas através das ferramentas de análise, replicando a perspectiva de um atacante externo.
+\end{itemize}
+
+\subsection{Cenário Grey Box: OWASP Juice Shop}
+
+Para a simulação de um teste do tipo \textbf{Grey Box}, foi escolhido o \textbf{OWASP Juice Shop \textbf{\cite{juice}}}. Trata-se de uma aplicação web moderna e complexa (escrita em Node.js e Angular), projetada pela OWASP para ser um campo de treinamento para segurança de aplicações.
+
+\begin{itemize}
+    \item \textbf{Justificativa da Escolha:} O Juice Shop é ideal para uma análise Grey Box, pois seu código-fonte é aberto e acessível. Isso permite que o analista tenha acesso a informações parciais, como a lógica de negócio e a estrutura do código, para guiar os testes de segurança, um cenário comum quando se audita uma aplicação da própria empresa.
+    
+    \item \textbf{Abordagem (Grey Box):} A análise foi conduzida com acesso total ao repositório do código-fonte no GitHub. O código foi consultado para entender como certas funcionalidades foram implementadas, identificar potenciais falhas lógicas e construir ataques mais direcionados. Por exemplo, ao analisar o código de autenticação, foi possível formular hipóteses sobre como explorar a vulnerabilidade de "Quebra de Autenticação".
+\end{itemize}
+
+\subsection{Ferramentas e Instrumentos de Análise}
+
+A seleção de ferramentas buscou cobrir as diferentes fases de um teste de invasão, sendo aplicadas em ambos os cenários conforme a necessidade, assim como ferramentas para o setup de infraestrutura requerida para a exposição das aplicações:
+
+\begin{itemize}
+    \item \textbf{Nmap \textbf{\cite{nmap2}}:} Utilizado na fase de reconhecimento mapeamento de portas e serviços.
+    
+    \item \textbf{OWASP ZAP \cite{zap}:} Empregado como proxy de interceptação para analisar o tráfego HTTP/S em ambos os ambientes, permitindo a manipulação de requisições para testar falhas de injeção, controle de acesso e outras.
+    
+    \item \textbf{Ferramentas Específicas:} Conforme a vulnerabilidade, ferramentas como \textbf{SQL Map \cite{sqlmap}} (para SQL Injection) e \textbf{Hydra \cite{hydra}} (para ataques de força bruta) foram utilizadas para automatizar e validar a exploração.
+    
+    \item \textbf{Análise de Código-Fonte:} O {Visual Studio \textbf{\cite{vscode}}} Code foi utilizado para navegar e inspecionar o código-fonte do Juice Shop, sendo uma ferramenta essencial para a abordagem Grey Box.
+
+    \item \textbf{Docker \cite{docker}:} Para a configuração das VMs e exposição das aplicações, serão utilizados containeres Docker para facilitar o processo de \emph{deploy}, onde todoa a aplicação será \emph{conteinerizada}.
+\end{itemize}
+
+Com base nos Materiais descritos previamente nesta seção, a analise será executada visando ter duas perspectivas de análise das vulnerabilidades, uma onde o pentester não tem informações prévias sobre o alvo (Black box) e outra onde as informações serão limitadas (Grey box).
+As escolhas de infraestrutura (um servidor em uma rede local) se dão para que seja possível simular cenários semelhantes aos encontrados em ambientes produtivos e as ferramentas selecionadas auxiliarão no processo.
+
 
 \section{Resultados e Discussão}
 Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TCC2, e deverá conter os resultados dos experimentos realizados, discussão comparando os resultados obtidos com outros encontrados em trabalhos similares, além de um parágrafo apontando as limitações da metodologia adotada.

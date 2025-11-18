@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.7)  21 OCT 2025 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.7)  4 NOV 2025 21:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1349,15 +1349,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'sbc-template.bbl' found.
- (sbc-template.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                duarte2022
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (sbc-template.bbl)
 Package biblatex Info: Reference section=0 on input line 84.
 Package biblatex Info: Reference segment=0 on input line 84.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 86.
@@ -1381,74 +1373,68 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 [3]
 
-LaTeX Warning: Citation 'duarte2022' on page 4 undefined on input line 176.
-
-
-
 [4]
 
-[5] (C:\Users\Leonardo\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 234.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 234.
+[5]
+
+[6]
+<fig1.jpg, id=127, 254.3904pt x 232.2276pt>
+File: fig1.jpg Graphic file (type jpg)
+<use fig1.jpg>
+Package pdftex.def Info: fig1.jpg  used on input line 266.
+(pdftex.def)             Requested size: 170.71393pt x 155.8468pt.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 267.
  (C:\Users\Leonardo\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 234.
- (C:\Users\Leonardo\AppData\Local\Programs\MiKTeX\tex/latex/bera\t1fvm.fd
-File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
-)
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 234.
-LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
-(Font)              scaled to size 10.20007pt on input line 235.
-<fig1.jpg, id=87, 254.3904pt x 232.2276pt>
-File: fig1.jpg Graphic file (type jpg)
-<use fig1.jpg>
-Package pdftex.def Info: fig1.jpg  used on input line 251.
-(pdftex.def)             Requested size: 170.71393pt x 155.8468pt.
-File: fig1.jpg Graphic file (type jpg)
-<use fig1.jpg>
-Package pdftex.def Info: fig1.jpg  used on input line 262.
-(pdftex.def)             Requested size: 170.71393pt x 155.8468pt.
-File: fig1.jpg Graphic file (type jpg)
-<use fig1.jpg>
-Package pdftex.def Info: fig1.jpg  used on input line 268.
-(pdftex.def)             Requested size: 170.71393pt x 155.8468pt.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: fig1.jpg Graphic file (type jpg)
+<use fig1.jpg>
+Package pdftex.def Info: fig1.jpg  used on input line 277.
+(pdftex.def)             Requested size: 170.71393pt x 155.8468pt.
+File: fig1.jpg Graphic file (type jpg)
+<use fig1.jpg>
+Package pdftex.def Info: fig1.jpg  used on input line 283.
+(pdftex.def)             Requested size: 170.71393pt x 155.8468pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[6 <./fig1.jpg>]
-
 [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[8] (sbc-template.aux)
+
+
+[8 <./fig1.jpg>]
+
+[9]
+
+[10] (sbc-template.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `sbc-template.out' has not changed.
-(rerunfilecheck)             Checksum: 3CBE249195A83044E37F7572359ADBCA;1542.
+(rerunfilecheck)             Checksum: C4B7994E56B645FC07374DE095D3DAB9;2558.
 Package logreq Info: Writing requests to 'sbc-template.run.xml'.
 \openout1 = `sbc-template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26466 strings out of 468129
- 479685 string characters out of 5429160
- 1363590 words of memory out of 5000000
- 54708 multiletter control sequences out of 15000+600000
- 664261 words of font info for 86 fonts, out of 8000000 for 9000
+ 25983 strings out of 468129
+ 475906 string characters out of 5429160
+ 1369010 words of memory out of 5000000
+ 54233 multiletter control sequences out of 15000+600000
+ 662708 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,10n,101p,731b,4312s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Leonardo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Leonardo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmb8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/bera/fvmr8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (8 pages, 172209 bytes).
+ <C:\Users\Leonardo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Leonardo/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on sbc-template.pdf (10 pages, 174094 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 

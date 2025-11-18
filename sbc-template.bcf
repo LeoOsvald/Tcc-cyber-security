@@ -2473,9 +2473,17 @@
     <bcf:citekey order="6" intorder="1">joseph2024</bcf:citekey>
     <bcf:citekey order="7" intorder="1">almeida</bcf:citekey>
     <bcf:citekey order="8" intorder="1">sampaio2021</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">duarte2022</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">duarte2020</bcf:citekey>
     <bcf:citekey order="10" intorder="1">Matthew2020</bcf:citekey>
     <bcf:citekey order="11" intorder="1">Santos2023</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">mt3</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">juice</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">nmap2</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">zap</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">sqlmap</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">hydra</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">vscode</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">docker</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
