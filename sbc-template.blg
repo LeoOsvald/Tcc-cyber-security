@@ -1,15 +1,15 @@
-[0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'sbc-template.blg'
-[66] biber-MSWIN64:342> INFO - === 
-[89] Biber.pm:421> INFO - Reading 'sbc-template.bcf'
-[159] Biber.pm:1002> INFO - Found 15 citekeys in bib section 0
-[167] Biber.pm:4487> INFO - Processing section 0
-[174] Biber.pm:4678> INFO - Looking for bibtex file 'sbc-template.bib' for section 0
-[204] bibtex.pm:1713> INFO - LaTeX decoding ...
-[215] bibtex.pm:1519> INFO - Found BibTeX data source 'sbc-template.bib'
-[268] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[269] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[269] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
-[269] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[278] bbl.pm:676> INFO - Writing 'sbc-template.bbl' with encoding 'UTF-8'
-[283] bbl.pm:779> INFO - Output to sbc-template.bbl
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'sbc-template.blg'
+[160] biber-MSWIN64:340> INFO - === 
+[207] Biber.pm:419> INFO - Reading 'sbc-template.bcf'
+[366] Biber.pm:979> INFO - Found 15 citekeys in bib section 0
+[386] Biber.pm:4419> INFO - Processing section 0
+[401] Biber.pm:4610> INFO - Looking for bibtex file 'sbc-template.bib' for section 0
+[549] bibtex.pm:1713> INFO - LaTeX decoding ...
+[579] bibtex.pm:1519> INFO - Found BibTeX data source 'sbc-template.bib'
+[708] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[708] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[708] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[708] Biber.pm:4245> INFO - No sort tailoring available for locale 'pt-BR'
+[730] bbl.pm:660> INFO - Writing 'sbc-template.bbl' with encoding 'UTF-8'
+[738] bbl.pm:763> INFO - Output to sbc-template.bbl
