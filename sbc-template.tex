@@ -94,13 +94,12 @@ Passo Fundo -- RS -- Brasil
 
 \section{Introdução}
 
-A segurança de aplicações web tornou-se um pilar fundamental no desenvolvimento de sistemas modernos, dada a crescente dependência do mundo digital para operações críticas e interações diárias. Com a grande crescente de serviços online, a superfície de ataque para cibercriminosos expandiu-se significativamente, tornando as aplicações web alvos constantes de exploração. A falha em proteger adequadamente essas aplicações pode resultar em perdas financeiras substanciais, comprometimento de dados sensíveis, danos à reputação e interrupção de serviços.
+A segurança de aplicações web tornou-se um pilar fundamental no desenvolvimento de sistemas modernos, dada a crescente dependência do mundo digital para operações críticas e interações diárias. Com a grande crescente de serviços online, a superfície de ataque para cibercriminosos expandiu-se significativamente, tornando as aplicações web alvos constantes de exploração. A falha em proteger adequadamente essas aplicações pode resultar em perdas financeiras substanciais, comprometimento de dados sensíveis, danos à reputação e interrupção de serviços. Como garantir, então, que tais aplicações sejam desenvolvidas de forma segura e resiliente a essas ameaças?
 
-Nesse cenário, a compreensão das vulnerabilidades e a implementação de práticas de desenvolvimento seguro são imperativas. Uma vulnerabilidade pode ser definida como uma fraqueza ou falha em um sistema de informação que pode ser explorada por uma ameaça para comprometer a segurança do sistema \textcite{almeida}. A identificação e mitigação dessas falhas são essenciais para garantir a integridade, confidencialidade e disponibilidade das informações processadas pelas aplicações web .
+Nesse cenário, a compreensão das vulnerabilidades e a implementação de práticas de desenvolvimento seguro são imperativas. Uma vulnerabilidade pode ser definida como uma fraqueza ou falha em um sistema de informação que pode ser explorada por uma ameaça para comprometer a segurança do sistema, \textcite{almeida}. A identificação e mitigação dessas falhas são essenciais para garantir a integridade, confidencialidade e disponibilidade das informações processadas pelas aplicações web.
 
 No mundo amplamente digital em que hoje nos encontramos, a pressão por entrega de novos projetos em ambientes governamentais, acadêmicos e corporativos, trás um senso de urgêcia exacerbado, o qual muitas vezez é artificial. Neste cenário, técnicas de segurança digital acabam sendo negligenciadas, e, dados importantes acabam sendo expostos, usuários acessam informações não autorizadas, e um projeto que deveria resolver um determinado problema, acaba por se tornar um. 
 
-Com a crescente demanda por aplicações e serviços web, a segurança torna-se um aspecto essencial no desenvolvimento de software. A ausência de práticas adequadas de proteção pode expor sistemas a ataques, resultando em falhas críticas, vazamento de informações e prejuízos significativos para as corporações. Como garantir, então, que tais aplicações sejam desenvolvidas de forma segura e resiliente a essas ameaças?
 
 No presente estudo serão analisadas as dez maiores vulnerabilidades segundo a lista o OWASP Top 10, mostrando o impacto que cada uma das vulnerabilidades citadas pode causar, assim como métodos de prevenção, levando em consideração técnicas para evitar a exposição de aplicações e de maneira direta evitando danos a integridade do dados disponiblizados pelas aplicações modernas.
 
@@ -111,9 +110,34 @@ testando comentario que não aparecerá no PDF
 \end{comment}   
     
 \subsection{OWASP Top 10}
-    A Open Web Application Security Project (OWASP) é uma comunidade global sem fins lucrativos dedicada a melhorar a segurança de software. Uma de suas iniciativas mais reconhecidas é o OWASP Top 10, um documento que lista e descreve os dez riscos de segurança mais críticos para aplicações web. Este ranking é atualizado a cada 4 anos com base em dados de vulnerabilidades de milhares de aplicações, servindo como um guia essencial para desenvolvedores e profissionais de segurança .
+    A Open Web Application Security Project (OWASP) é uma comunidade global sem fins lucrativos dedicada a melhorar a segurança de software. Uma de suas iniciativas mais reconhecidas é o OWASP Top 10, um documento que lista e descreve os dez riscos de segurança mais críticos para aplicações web. Este ranking é atualizado a cada 4 anos com base em dados de vulnerabilidades de milhares de aplicações, servindo como um guia essencial para desenvolvedores e profissionais de segurança.
 
 O OWASP Top 10 não é uma lista de todas as vulnerabilidades existentes, mas sim um consenso sobre os riscos mais notaveis e impactantes que as empresas devem priorizar em seus esforços de segurança. Ele visa aumentar a conscientização sobre os riscos de segurança de aplicações e dar orientações para a uma redução de possíveis falhas em sistemas . O entendimento e aplicação dos conceitos  do OWASP Top 10 são cruciais para o desenvolvimento de aplicações robustas e seguras.
+
+A lista do TOP 10 é atualizada a cada 4 anos e geralmente ocorre no final do ano do ciclo. O presente trabalho será baseado na lista de 2021.
+Abaixo é possivel identificar o que mudou de 2017 para 2021. 
+
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{mapping.png}
+    \caption{OWASP Top 10 2021}
+    
+\end{figure}
+
+
+A proxima atualização (release) acontecerá no final de 2025 e possui uma pré release disponivel.
+
+
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{2025-mappings.png}
+    \caption{OWASP Top 10 2025 pré-release}
+    
+\end{figure}
 
 
 \subsection{Segurança de APIs e aplicações Web}
@@ -124,31 +148,35 @@ As vulnerabilidades em APIs e sistemas web podem incluir quebras de autenticaç�
 
 
 \subsection{Vulnerabilidades mais Comuns em Aplicações Web}
-As vulnerabilidades listadas no OWASP Top 10 abrangem uma infinidade de falhas de segurança que podem ser exploradas por atacantes. Dentre as mais persistentes e perigosas,como de acordo com o OWASP TOP 10 2021 destacam-se:
+As vulnerabilidades listadas no OWASP Top 10 abrangem uma infinidade de falhas de segurança que podem ser exploradas por atacantes. Dentre as mais persistentes e perigosas, segundo \textcite{owasp10} destacam-se:
 
 
-2.2.1 Quebra de Controle de Acesso (Broken Access Control)
+2.3.1 Quebra de Controle de Acesso (Broken Access Control)
 
 As falhas de controle de acesso ocorrem quando as restrições sobre o que usuários autenticados podem fazer não são aplicadas corretamente. Atacantes podem explorar essas falhas para acessar funcionalidades não autorizadas, visualizar ou modificar dados de outros usuários, ou alterar privilégios. A implementação de um controle de acesso robusto e a verificação de permissões em cada requisição são cruciais para prevenir essas vulnerabilidades .
 
 
-2.2.2 Exposição de dados sensíveis (Cryptographic Failures)
+2.3.2 Exposição de dados sensíveis (Cryptographic Failures)
 
 As exposições de dados sensiveis (Cryptographic Failures) acontecem no momento em que, segundo \textcite{joseph2024}, dados são enviados/recebidos sem serem criptografados assim levando dados sensíveis a serem expostos.
-A utilização do protocolo HTTPS, por exemplo é inprescindível para que dados possam transitar na web de forma segura, permitindo que dados sejam criptografados e que apenas quem de fato deveria ter acesso aos dados, possa acessá-los.
+A utilização do protocolo HTTPS, por exemplo, é imprescindível para que dados possam transitar na web de forma segura, permitindo que dados sejam criptografados e que apenas quem de fato deveria ter acesso aos dados, possa acessá-los.
 
-2.2.3 Injeção (Injection)
+2.3.3 Injeção (Injection)
 
-As falhas de injeção, como SQL Injection, ocorrem quando dados não confiáveis são enviados a um interpretador como parte de um comando ou consulta. Os dados maliciosos do atacante podem enganar o interpretador para executar comandos não intencionais ou acessar dados sem autorização . Este tipo de ataque pode levar à divulgação completa de dados, modificação ou exclusão de informações, e até mesmo ao controle total do servidor . A prevenção envolve o uso de consultas parametrizadas, procedimentos armazenados e validação rigorosa de entrada .
+As falhas de injeção, como SQL Injection, ocorrem quando dados não confiáveis são enviados a um interpretador como parte de um comando ou consulta. Os dados maliciosos do atacante podem enganar o interpretador para executar comandos não intencionais ou acessar dados sem autorização . Este tipo de ataque pode levar à divulgação completa de dados, modificação ou exclusão de informações, e até mesmo ao controle total do servidor . No passado, o SQL injection costumava ser o tipo de falha de injeção mais comum. Segundo \textcite{souza2021} ataques de injeção do tipo XSS e CSRF são os tipos mais populares de ataques de injeção de
+código script atualmente, dado a popularidade destas tecnologias em aplicações web modernas. A prevenção envolve o uso de consultas parametrizadas, procedimentos armazenados e validação rigorosa de entrada através de tecnicas de sanitização de dados.
 
-2.2.2 Quebra de Autenticação e Gerenciamento de Sessão (Broken Authentication)
+2.3.4 Quebra de Autenticação e Gerenciamento de Sessão (Broken Authentication)
 
-Essas vulnerabilidades permitem que atacantes comprometam senhas, chaves de sessão ou tokens de autenticação, ou explorem falhas na implementação de funções de autenticação ou gerenciamento de sessão para assumir a identidade de outros usuários. Isso pode incluir ataques de força bruta, credenciais fracas, ou falhas na expiração de sessão .
+Essas vulnerabilidades permitem que atacantes comprometam senhas, chaves de sessão ou tokens de autenticação, ou explorem falhas na implementação de funções de autenticação ou gerenciamento de sessão para assumir a identidade de outros usuários. Isso pode incluir ataques de força bruta, credenciais fracas, ou falhas na expiração de sessão.
 
-2.2.3 Cross-Site Scripting (XSS)
+2.3.5 Configurança Incorreta de Segurança (Security Misconfiguration)
 
-O XSS, que é um outro tipo de Injeção de código malicioso, ocorre quando uma aplicação inclui dados não confiáveis em uma página web sem a validação ou escape adequado. Isso permite que atacantes injetem scripts maliciosos no navegador da vítima, que podem roubar cookies de sessão, redirecionar o usuário para sites maliciosos ou realizar outras ações maliciosas em nome do usuário . A mitigação de XSS requer a sanitização de todas as entradas e a codificação de saída para evitar a execução de scripts .
+Configurações incorretas de segurança, acontecem quando alguma etapa na publicação de uma aplicação web é negligenciada. São diversas as possibilidades de má configuração: portas desnecessáriamente abertas, frameworks desatualizados, falta de autenticação/autorizaçao, entre muitos outros.  Maneiras de prevenção incluem rotina rigorosa de testes com configurções idênticas em todos ambientes, com exceção das credenciais correspondentes a cada ambiente.
 
+\subsection{Pentest}
+
+O teste de intrusão (pentest) é uma prática fundamental na segurança da informação, pois permite identificar vulnerabilidades exploráveis antes que agentes maliciosos o façam. Estudos recentes mostram que, apesar da evolução das metodologias, ainda existem desafios significativos na padronização, automação e avaliação dos resultados de pentests (Bertoglio & Zorzo, 2017). Pesquisas também têm avançado no uso de inteligência artificial, especialmente reinforcement learning (RL), para automatizar etapas do processo de ataque, simulando ambientes como Capture-the-Flag (CTF) e aplicações web vulneráveis (Zennaro e Erdődi, 2023). Frameworks de automação, como o HARMer, demonstram que a modelagem hierárquica de ataques pode aumentar a eficácia e permitir avaliações mais precisas de risco (Enoch et al., 2020). Essas abordagens mostram que o campo de pentesting está evoluindo rapidamente, integrando técnicas tradicionais com ferramentas baseadas em IA, o que amplia tanto o potencial ofensivo quanto a complexidade das defesas necessárias.
 
 
 \section{Trabalhos Relacionados}
