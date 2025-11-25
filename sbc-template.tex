@@ -71,13 +71,13 @@
 % 2025-06-05: (fahadkalil) Adição de novos exemplos de referências bibliográficas, figuras e tabelas / Correção para que campos desnecessários no arquivo .bib sejam ignorados na renderização / Correção de espaçamento no comando \begin{itemize} usando opções adicionais na seção Trabalhos Relacionados / Correção de recuos quando utilizado o comando \begin{description} / Correção na fonte e espaçamentos do comando 'lstlisting'
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CABEÇALHO
-\title{Avaliação de vulnerabilidades em aplicações utilizando OWASP Top 10 } % titulo
+\title{Abordagem Prática de Análise de Vulnerabilidades Web: Black Box e Grey Box com OWASP Top 10 } % titulo
 
 \author{Leonardo Osvald de Souza\inst{1}, Vitalino Pitt\inst{1}} % autor principal, orientador
 
 \address{Ciência da Computação -- Atitus Educação\\
 Passo Fundo -- RS -- Brasil
-\email{aluno@atitus.edu.br, orientador@atitus.edu.br}
+\email{1121661@atitus.edu.br, vitalino.pitt@atitus.edu.br}
 }
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -85,37 +85,46 @@ Passo Fundo -- RS -- Brasil
 \maketitle % Não remova essa linha!
 
 \begin{abstract} % resumo em inglês
-  teste
+  The increasing reliance on connected systems has significantly expanded organizations’ exposure to cyber threats, particularly in web applications and APIs. Vulnerabilities classified in the OWASP Top 10 remain among the most exploited by malicious actors, emphasizing the need for secure development practices and a solid understanding of their impact. This study aims to analyze the vulnerabilities listed in the OWASP Top 10 (2021) through experiments conducted in intentionally vulnerable environments. Two widely known platforms were selected for this purpose: Metasploitable 3, used for Black Box testing, and OWASP Juice Shop, used in a Grey Box approach with access to the source code. The methodology includes reconnaissance, scanning, exploitation, and validation phases using tools such as Nmap, OWASP ZAP, SQLMap, and Hydra, in addition to manual code analysis. The expected results involve demonstrating the exploitation of the main identified vulnerabilities, assessing their severity, and presenting mitigation strategies aligned with security best practices. This research aims to support developers and security analysts by highlighting the importance of continuous assessments and structured pentesting methodologies for building secure and resilient applications.
+  Keywords: Information Security; OWASP Top 10; Penetration Testing; Vulnerabilities; Web Applications.
 \end{abstract}
      
 \begin{resumo}
-  Resumo do trabalho (teste)...  
+  A crescente dependência de sistemas conectados elevou significativamente a exposição de organizações a ameaças cibernéticas, especialmente em aplicações web e APIs. Vulnerabilidades classificadas pelo OWASP Top 10 continuam entre as mais exploradas por agentes mal-intencionados, tornando essencial a compreensão de seus impactos e a adoção de práticas de desenvolvimento seguro. Este trabalho tem como objetivo analisar as vulnerabilidades listadas no OWASP Top 10 (2021) por meio de experimentos conduzidos em ambientes deliberadamente vulneráveis. Para isso, foram selecionadas duas plataformas amplamente utilizadas em treinamentos de segurança: Metasploitable 3, para testes do tipo Black Box, e OWASP Juice Shop, para a abordagem Grey Box com acesso ao código-fonte. A metodologia inclui etapas de reconhecimento, varredura, exploração e validação utilizando ferramentas como Nmap, OWASP ZAP, SQLMap e Hydra, além de análise manual de trechos de código. Os resultados esperados envolvem demonstrar a exploração das principais vulnerabilidades identificadas, compreender sua criticidade e apresentar recomendações de mitigação alinhadas às boas práticas de segurança. A pesquisa busca contribuir para a formação de desenvolvedores e analistas de segurança, reforçando a importância de avaliações contínuas e metodologias estruturadas de pentest na construção de aplicações robustas.
+
+    Palavras-chave: Segurança da Informação; OWASP Top 10; Pentest; Vulnerabilidades; Aplicações Web.
 \end{resumo}
 
 \section{Introdução}
 
-A segurança de aplicações web tornou-se um pilar fundamental no desenvolvimento de sistemas modernos, dada a crescente dependência do mundo digital para operações críticas e interações diárias. Com a grande crescente de serviços online, a superfície de ataque para cibercriminosos expandiu-se significativamente, tornando as aplicações web alvos constantes de exploração. A falha em proteger adequadamente essas aplicações pode resultar em perdas financeiras substanciais, comprometimento de dados sensíveis, danos à reputação e interrupção de serviços. Como garantir, então, que tais aplicações sejam desenvolvidas de forma segura e resiliente a essas ameaças?
+A crescente digitalização de serviços nas áreas corporativa, governamental e pessoal ampliou significativamente a dependência de sistemas conectados. Esse cenário aumentou também a superfície de ataque disponível para agentes maliciosos, que exploram vulnerabilidades para obter acessos indevidos, manipular dados ou comprometer a disponibilidade dos serviços. Dessa forma, a segurança da informação tornou-se um dos pilares essenciais para garantir a integridade e a confiabilidade dos sistemas modernos.
 
-Nesse cenário, a compreensão das vulnerabilidades e a implementação de práticas de desenvolvimento seguro são imperativas. Uma vulnerabilidade pode ser definida como uma fraqueza ou falha em um sistema de informação que pode ser explorada por uma ameaça para comprometer a segurança do sistema, \textcite{almeida}. A identificação e mitigação dessas falhas são essenciais para garantir a integridade, confidencialidade e disponibilidade das informações processadas pelas aplicações web.
+Uma vulnerabilidade consiste em uma fraqueza capaz de comprometer a confidencialidade, integridade ou disponibilidade das informações, \textcite{almeida}. Em aplicações web e APIs, tais falhas são frequentes devido à alta complexidade arquitetural, à crescente demanda por integrações e à pressão por ciclos de desenvolvimento cada vez mais rápidos. Como consequência, falhas de segurança podem resultar em vazamento de dados sensíveis, perdas financeiras, danos reputacionais e interrupção de serviços críticos.
 
-No mundo amplamente digital em que hoje nos encontramos, a pressão por entrega de novos projetos em ambientes governamentais, acadêmicos e corporativos, trás um senso de urgêcia exacerbado, o qual muitas vezez é artificial. Neste cenário, técnicas de segurança digital acabam sendo negligenciadas, e, dados importantes acabam sendo expostos, usuários acessam informações não autorizadas, e um projeto que deveria resolver um determinado problema, acaba por se tornar um. 
+Nesse contexto, iniciativas como o OWASP Top 10 desempenham papel fundamental ao catalogar e classificar as vulnerabilidades mais comuns observadas em sistemas ao redor do mundo. Esse documento, amplamente adotado pela comunidade de segurança, orienta desenvolvedores e equipes técnicas na identificação e mitigação de riscos prioritários.
 
+Diante da relevância do tema, o objetivo geral deste trabalho é identificar, explorar e analisar vulnerabilidades presentes nas listas do OWASP Top 10 por meio de testes de intrusão em ambientes vulneráveis.
 
-No presente estudo serão analisadas as dez maiores vulnerabilidades segundo a lista o OWASP Top 10, mostrando o impacto que cada uma das vulnerabilidades citadas pode causar, assim como métodos de prevenção, levando em consideração técnicas para evitar a exposição de aplicações e de maneira direta evitando danos a integridade do dados disponiblizados pelas aplicações modernas.
-
+Essa abordagem busca não apenas demonstrar a presença e o impacto das vulnerabilidades, mas também apresentar técnicas de detecção e medidas de mitigação, contribuindo para a formação de boas práticas de segurança no desenvolvimento e manutenção de aplicações.
 \section{Referencial Teórico}
-Na seguinte seção serão apresentados os conceitos base para a evolução do trabalho.
+Esta seção apresenta os fundamentos teóricos que embasam a pesquisa, abordando os principais conceitos, normas e vulnerabilidades relacionados à segurança de aplicações web. O entendimento desses elementos é essencial para a correta identificação, análise e mitigação de riscos de segurança, bem como para a execução dos testes de invasão propostos neste trabalho.
+
+Inicialmente, será detalhado o OWASP Top 10, documento de referência global que cataloga as ameaças mais críticas e recorrentes em aplicações web, servindo como guia prioritário para esforços de segurança. Em seguida, o referencial avança para a discussão sobre Segurança de APIs e Aplicações Web, contextualizando a evolução das arquiteturas de software e os novos vetores de ataque decorrentes do uso massivo de interfaces de programação.
+
+Serão também descritas as Vulnerabilidades mais Comuns em Aplicações Web, com foco naquelas constantes no OWASP Top 10 2021 – incluindo Quebra de Controle de Acesso, Falhas Criptográficas, Injeção e Quebra de Autenticação –, explicando seus mecanismos, impactos e formas de prevenção.
+
+Por fim, aborda-se o conceito de Pentest (teste de invasão), apresentando suas metodologias, finalidades e a crescente incorporação de técnicas de inteligência artificial para automação de atividades de reconhecimento e exploração. Esse embasamento permitirá uma compreensão sólida dos experimentos realizados e das estratégias de mitigação propostas.
 \begin{comment}
 testando comentario que não aparecerá no PDF
 \end{comment}   
     
 \subsection{OWASP Top 10}
-    A Open Web Application Security Project (OWASP) é uma comunidade global sem fins lucrativos dedicada a melhorar a segurança de software. Uma de suas iniciativas mais reconhecidas é o OWASP Top 10, um documento que lista e descreve os dez riscos de segurança mais críticos para aplicações web. Este ranking é atualizado a cada 4 anos com base em dados de vulnerabilidades de milhares de aplicações, servindo como um guia essencial para desenvolvedores e profissionais de segurança.
+    A Open Web Application Security Project (OWASP) é uma comunidade global sem fins lucrativos dedicada a melhorar a segurança de software. Uma de suas iniciativas mais reconhecidas é o OWASP Top 10, um documento que lista e descreve os dez riscos de segurança mais críticos para aplicações web. Este ranking é atualizado a cada 4 anos com base em dados de vulnerabilidades, coletados de milhares de aplicações, compartilhados por profissionais e especialistas, servindo como um guia essencial para desenvolvedores e profissionais de segurança \cite{owasp10}.
 
-O OWASP Top 10 não é uma lista de todas as vulnerabilidades existentes, mas sim um consenso sobre os riscos mais notaveis e impactantes que as empresas devem priorizar em seus esforços de segurança. Ele visa aumentar a conscientização sobre os riscos de segurança de aplicações e dar orientações para a uma redução de possíveis falhas em sistemas . O entendimento e aplicação dos conceitos  do OWASP Top 10 são cruciais para o desenvolvimento de aplicações robustas e seguras.
+O OWASP Top 10 não é uma lista de todas as vulnerabilidades existentes, mas sim um consenso sobre os riscos mais notáveis e impactantes que as empresas devem priorizar em seus esforços de segurança. Ele visa aumentar a conscientização sobre os riscos de segurança de aplicações e dar orientações para uma redução de possíveis falhas em sistemas. O entendimento e aplicação dos conceitos  do OWASP Top 10 são cruciais para o desenvolvimento de aplicações robustas e seguras.
 
 A lista do TOP 10 é atualizada a cada 4 anos e geralmente ocorre no final do ano do ciclo. O presente trabalho será baseado na lista de 2021.
-Abaixo é possivel identificar o que mudou de 2017 para 2021. 
+Abaixo é possível identificar o oque mudou em comparação a lista de 2017, após reunir os dados fornecidos durante os 4 anos.
 
 % Figura
 \begin{figure}[H]
@@ -127,7 +136,9 @@ Abaixo é possivel identificar o que mudou de 2017 para 2021.
 \end{figure}
 
 
-A proxima atualização (release) acontecerá no final de 2025 e possui uma pré release disponivel.
+A proxima atualização (release) acontecerá no final de 2025 e possui uma pré release disponivel. Como é possivel identificar na imagem, a lista em sua maioria manteve grande parte das vulnerabilidades em comparação a 2021, com alterações no nome para englobar mais vulnerabilidades de mesma categoria no mesmo item.
+Falhas criptograficas (Cryptographic Failures), Injeção (Injection) e design inseguro (Insecure Design) perdem 2 posições para Configurações Incorretas de segurança (Security Misconfiguration) e Falhas na Cadeia de Suprimentos de Software (Software Supply Chain Failures), que era previamente o "Vulnerable and outdated components";
+
 
 
 % Figura
@@ -143,7 +154,7 @@ A proxima atualização (release) acontecerá no final de 2025 e possui uma pré
 \subsection{Segurança de APIs e aplicações Web}
     Com a arquitetura de microsserviços e a crescente adoção de APIs (Application Programming Interfaces) para comunicação entre sistemas, a segurança dessas interfaces tornou-se uma preocupação crítica. As APIs são frequentemente a porta de entrada para dados e funcionalidades de backend, tornando-as alvos atraentes para atacantes . O OWASP API Security Top 10 é uma iniciativa específica que foca nos riscos de segurança mais críticos para APIs, complementando o OWASP Top 10 tradicional .
 
-Segundo \textcite{leite2022} "Uma aplicação web é um tipo de software projetado para operar mediante o acesso e a interação por meio de um navegador web" as quais, caso desenvolvidas sonegando boas práticas de segurança, tornam-se alvos em potencial para invasores, tendo em vista que toda grande corporação possui algum tipo de sistema que está conectado a rede mundial de computadores.
+Segundo \textcite{leite2022} "Uma aplicação web é um tipo de software projetado para operar mediante o acesso e a interação por meio de um navegador web" as quais, caso desenvolvidas negligenciando boas práticas de segurança, tornam-se alvos em potencial para invasores, tendo em vista que toda grande corporação possui algum tipo de sistema que está conectado a rede mundial de computadores.
 As vulnerabilidades em APIs e sistemas web podem incluir quebras de autenticação e autorização, exposição excessiva de dados, injeção, e configurações de segurança inadequadas. A análise de maneiras seguras no desenvolvimento de APIs, de acordo com as diretrizes do OWASP API Security Top 10, é fundamental para proteger os sistemas modernos . Isso envolve a implementação de autenticação e autorização robustas, validação de entrada e saída, gerenciamento de erros seguro e monitoramento contínuo.
 
 
@@ -153,8 +164,7 @@ As vulnerabilidades listadas no OWASP Top 10 abrangem uma infinidade de falhas d
 
 2.3.1 Quebra de Controle de Acesso (Broken Access Control)
 
-As falhas de controle de acesso ocorrem quando as restrições sobre o que usuários autenticados podem fazer não são aplicadas corretamente. Atacantes podem explorar essas falhas para acessar funcionalidades não autorizadas, visualizar ou modificar dados de outros usuários, ou alterar privilégios. A implementação de um controle de acesso robusto e a verificação de permissões em cada requisição são cruciais para prevenir essas vulnerabilidades .
-
+As falhas de controle de acesso ocorrem quando as restrições sobre o que usuários autenticados podem fazer não são aplicadas corretamente. Atacantes podem explorar essas falhas para acessar funcionalidades não autorizadas, visualizar ou modificar dados de outros usuários, ou alterar privilégios , \cite{Matthew2020}. A implementação de um controle de acesso robusto e a verificação de permissões em cada requisição são cruciais para prevenir essas vulnerabilidades .
 
 2.3.2 Exposição de dados sensíveis (Cryptographic Failures)
 
@@ -163,20 +173,41 @@ A utilização do protocolo HTTPS, por exemplo, é imprescindível para que dado
 
 2.3.3 Injeção (Injection)
 
-As falhas de injeção, como SQL Injection, ocorrem quando dados não confiáveis são enviados a um interpretador como parte de um comando ou consulta. Os dados maliciosos do atacante podem enganar o interpretador para executar comandos não intencionais ou acessar dados sem autorização . Este tipo de ataque pode levar à divulgação completa de dados, modificação ou exclusão de informações, e até mesmo ao controle total do servidor . No passado, o SQL injection costumava ser o tipo de falha de injeção mais comum. Segundo \textcite{souza2021} ataques de injeção do tipo XSS e CSRF são os tipos mais populares de ataques de injeção de
+As falhas de injeção, como SQL Injection, ocorrem quando dados não confiáveis são enviados a um interpretador como parte de um comando ou consulta. Os dados maliciosos do atacante podem enganar o interpretador para executar comandos não intencionais ou acessar dados sem autorização . Este tipo de ataque pode levar à divulgação completa de dados, modificação ou exclusão de informações, e até mesmo ao controle total do servidor . No passado, o SQL injection costumava ser o tipo de falha de injeção mais comum e segundo \cite{owasp10} continua dentro o grupo falhas de injeção mais comuns. Segundo \textcite{souza2021} ataques de injeção do tipo XSS e CSRF são os tipos mais populares de ataques de injeção de
 código script atualmente, dado a popularidade destas tecnologias em aplicações web modernas. A prevenção envolve o uso de consultas parametrizadas, procedimentos armazenados e validação rigorosa de entrada através de tecnicas de sanitização de dados.
 
 2.3.4 Quebra de Autenticação e Gerenciamento de Sessão (Broken Authentication)
 
-Essas vulnerabilidades permitem que atacantes comprometam senhas, chaves de sessão ou tokens de autenticação, ou explorem falhas na implementação de funções de autenticação ou gerenciamento de sessão para assumir a identidade de outros usuários. Isso pode incluir ataques de força bruta, credenciais fracas, ou falhas na expiração de sessão.
+Broken Authentication  é o termo utilizado para relatar o problema de quebra de credenciais de usuario. O porblema pode acontecer de diversas maneiras, desde senhas fracas do usuário que facilitam métodos de força bruta, senhas armnazenadas no banco de dados de maneira incorreta, sem tecnicas de hashing por exemplo, \cite{Matthew2020}.
 
-2.3.5 Configurança Incorreta de Segurança (Security Misconfiguration)
+2.3.5 Configuranção Incorreta de Segurança (Security Misconfiguration)
 
-Configurações incorretas de segurança, acontecem quando alguma etapa na publicação de uma aplicação web é negligenciada. São diversas as possibilidades de má configuração: portas desnecessáriamente abertas, frameworks desatualizados, falta de autenticação/autorizaçao, entre muitos outros.  Maneiras de prevenção incluem rotina rigorosa de testes com configurções idênticas em todos ambientes, com exceção das credenciais correspondentes a cada ambiente.
+Configurações incorretas de segurança, acontecem quando alguma etapa na publicação de uma aplicação web é negligenciada. São diversas as possibilidades de má configuração: portas desnecessariamente abertas, frameworks desatualizados, falta de autenticação/autorizaçao, entre muitos outros.  Maneiras de prevenção incluem rotina rigorosa de testes com configurções idênticas em todos ambientes, com exceção das credenciais correspondentes a cada ambiente.
+
+
+2.3.6 Componentes Vulneráveis e Desatualizados
+
+Componentes vulneráveis e desatualizados representam uma das causas mais recorrentes de ataques em aplicações modernas. Segundo \textcite{owasp10}, essas falhas ocorrem quando bibliotecas, frameworks, servidores de aplicações ou módulos de terceiros utilizados pelo sistema estão em versões antigas, com vulnerabilidades já conhecidas e catalogadas. É omum que equipes de desenvolvimento foquem apenas na lógica da aplicação e deixem de atualizar dependências externas, o que abre espaço para exploração por parte de atacantes que buscam precisamente componentes com CVEs conhecidos. A prevenção envolve manter inventários atualizados, aplicar ferramentas de análise de composição de software (SCA), como o OWASP Dependency-Check, e garantir que todos os artefatos sejam obtidos de repositórios confiáveis e com verificação de integridade digital.
+
+2.3.7 Falhas de Identificação e Autenticação
+
+As falhas de identificação e autenticação (Identification and Authentication Failures) englobam problemas relacionados ao processo de autenticar usuários e gerenciar sessões de forma segura. Segundo \textcite{owasp10}, tais vulnerabilidades incluem senhas fracas, ausência de autenticação multifator, IDs de sessão previsíveis, ausência de limitação de tentativas de login e recuperação de senha insegura. Estudos brasileiros, como o trabalho de \textcite{ifgoiano2022}, demonstram que a maior parte dos incidentes relacionados a este tipo de falha ocorre devido a implementações incorretas de mecanismos básicos de autenticação. Para mitigação, recomenda-se a adoção de multifator, hashes seguros para senhas, renovação de sessão após login e registro detalhado de tentativas mal-sucedidas de acesso.
+
+2.3.8 Falhas de Integridade de Software e Dados
+
+Falhas de integridade de software e dados (Software and Data Integrity Failures) surgem quando aplicações não verificam adequadamente a autenticidade ou confiabilidade de dados, atualizações ou componentes carregados dinamicamente. Conforme explica \textcite{owasp10}, uma classe comum desse tipo de falha são processos de CI/CD vulneráveis, que podem permitir a inserção de código malicioso durante o pipeline de deploy. Outro exemplo amplamente documentado é a desserialização insegura, onde objetos recebidos de fontes externas podem ser manipulados para execução arbitrária de código. Pesquisas nacionais como as de \textcite{unb2024} apontam que grande parte das organizações negligencia controles de integridade nas etapas de automação, tornando seus sistemas suscetíveis a ataques supply chain. Entre as medidas preventivas incluem-se a verificação de assinatura digital de artefatos, controle rigoroso de acesso ao pipeline e limitação do carregamento de objetos serializados.
+
+2.3.9 Falhas de Log e Monitoramento de Segurança
+
+Falhas de log e monitoramento (Security Logging and Monitoring Failures) se referem à incapacidade de registrar, detectar ou responder adequadamente a eventos suspeitos ou maliciosos. Conforme destacado pela OWASP \textcite{owasp10}, sistemas que não registram informações essenciais como falhas de autenticação, alterações de privilégio ou eventos de acesso a recursos sensíveis tornam-se extremamente difíceis de auditar após incidentes, além de não conseguirem detectar ataques em andamento. Trabalhos como o de \textcite{unb2024} reforçam que, sem monitoramento estruturado, é praticamente impossível realizar análises forenses ou identificar padrões de ataque em tempo hábil. Boas práticas incluem geração de logs estruturados, uso de plataformas de correlação como SIEM, retenção segura de registros e implementação de alertas automáticos para eventos críticos.
+
+2.3.10 Falsificação de Requisição no Lado do Servidor (SSRF)
+
+A vulnerabilidade de Server-Side Request Forgery (SSRF) ocorre quando um atacante consegue induzir o servidor a enviar requisições HTTP para destinos internos ou externos não autorizados. Segundo \textcite{owasp10}, esse tipo de ataque é especialmente crítico em ambientes de nuvem, nos quais metadados de instâncias podem ser expostos se o servidor for induzido a acessá-los inadvertidamente. Aplicações que permitem ao usuário fornecer URLs arbitrárias, como webhooks, integrações e serviços de importação de dados,  tornam-se particularmente suscetíveis a SSRF. Para mitigação, recomenda-se a validação rigorosa de URLs fornecidas pelo usuário, uso de listas de permissão (whitelists), restrição de tráfego de saída do servidor por meio de firewalls e proibição de protocolos perigosos, como file:// e access a IPs internos.
 
 \subsection{Pentest}
 
-O teste de intrusão (pentest) é uma prática fundamental na segurança da informação, pois permite identificar vulnerabilidades exploráveis antes que agentes maliciosos o façam. Estudos recentes mostram que, apesar da evolução das metodologias, ainda existem desafios significativos na padronização, automação e avaliação dos resultados de pentests (Bertoglio & Zorzo, 2017). Pesquisas também têm avançado no uso de inteligência artificial, especialmente reinforcement learning (RL), para automatizar etapas do processo de ataque, simulando ambientes como Capture-the-Flag (CTF) e aplicações web vulneráveis (Zennaro e Erdődi, 2023). Frameworks de automação, como o HARMer, demonstram que a modelagem hierárquica de ataques pode aumentar a eficácia e permitir avaliações mais precisas de risco (Enoch et al., 2020). Essas abordagens mostram que o campo de pentesting está evoluindo rapidamente, integrando técnicas tradicionais com ferramentas baseadas em IA, o que amplia tanto o potencial ofensivo quanto a complexidade das defesas necessárias.
+O teste de intrusão (pentest) é uma prática fundamental na segurança da informação, pois permite identificar vulnerabilidades exploráveis antes que agentes maliciosos o façam. Estudos recentes mostram que, apesar da evolução das metodologias, ainda existem desafios significativos na padronização, automação e avaliação dos resultados de pentests \cite{Bertoglio2017}. Pesquisas também têm avançado no uso de inteligência artificial, especialmente reinforcement learning (RL), para automatizar etapas do processo de ataque, simulando ambientes como Capture-the-Flag (CTF) e aplicações web vulneráveis \cite{Zennaro2023}. Frameworks de automação, como o HARMer, demonstram que a modelagem hierárquica de ataques pode aumentar a eficácia e permitir avaliações mais precisas de risco \cite{Enoch2020}. Essas abordagens mostram que o campo de pentesting está evoluindo rapidamente, integrando técnicas tradicionais com ferramentas baseadas em IA, o que amplia tanto o potencial ofensivo quanto a complexidade das defesas necessárias.
 
 
 \section{Trabalhos Relacionados}
@@ -212,7 +243,7 @@ Com o aumento constante de ataques cibernéticos, a segurança de aplicações w
 
 Este estudo se propôs a investigar, na prática, as vulnerabilidades presentes no site do Centro de Inovações Tecnológicas do Rio Grande do Norte (CINTE-RN). O objetivo era não apenas apontar falhas, mas também refletir sobre a importância de se adotar uma cultura de segurança desde a codificação até a hospedagem de uma aplicação.
 
-Para isso, os pesquisadores simularam a abordagem de um invasor externo, utilizando ferramentas especializadas como o NMAP e o Nessus para analisar o site e seu servidor sem ter nenhum conhecimento prévio da infraestrutura—uma metodologia conhecida como teste de "caixa preta".
+Para isso, os pesquisadores simularam a abordagem de um invasor externo, utilizando ferramentas especializadas como o NMAP e o Nessus para analisar o site e seu servidor sem ter nenhum conhecimento prévio da infraestrutura, uma metodologia conhecida como teste de "caixa preta".
 
 Os resultados revelaram 216 possíveis vulnerabilidades. A boa notícia é que a grande maioria das falhas mais sérias poderia ter sido evitada com medidas relativamente simples, como manter os sistemas atualizados, aplicar correções de segurança e configurar o servidor para não divulgar informações que facilitem um ataque. O trabalho conclui que a segurança não é uma etapa complexa e inacessível, mas sim uma soma de boas práticas e atenção contínua que podem prevenir a maioria dos problemas.
     
@@ -251,7 +282,7 @@ Visando simular um ambiente próximo ao encontrado em cenários reais, será emp
 
 \subsection{Cenário Black Box: Metasploitable 3 }
 
-Para simular um teste de penetração do tipo \textbf{Black Box}, onde o analista não possui conhecimento prévio da infraestrutura interna, foi utilizado o \textbf{\cite{mt3}}. Este ambiente é uma máquina virtual intencionalmente vulnerável, baseada em Windows Server, que expõe uma variedade de serviços e aplicações, incluindo tecnologias do ecossistema Microsoft.
+Para simular um teste de penetração do tipo \textbf{Black Box}, onde o analista não possui conhecimento prévio da infraestrutura interna, foi utilizado o Metasploitable 3. Este ambiente é uma máquina virtual intencionalmente vulnerável, baseada em Windows Server, que expõe uma variedade de serviços e aplicações, incluindo tecnologias do ecossistema Microsoft.
 
 \begin{itemize}
     \item \textbf{Justificativa da Escolha:} A escolha do Metasploitable 3 se deu por sua natureza como um "alvo desconhecido". Ele simula um servidor corporativo real, permitindo que a análise siga as fases de um pentest ético (reconhecimento, varredura, exploração) sem qualquer informação privilegiada.
@@ -261,7 +292,7 @@ Para simular um teste de penetração do tipo \textbf{Black Box}, onde o analist
 
 \subsection{Cenário Grey Box: OWASP Juice Shop}
 
-Para a simulação de um teste do tipo \textbf{Grey Box}, foi escolhido o \textbf{OWASP Juice Shop \textbf{\cite{juice}}}. Trata-se de uma aplicação web moderna e complexa (escrita em Node.js e Angular), projetada pela OWASP para ser um campo de treinamento para segurança de aplicações.
+Para a simulação de um teste do tipo Grey Box, foi escolhido o OWASP Juice Shop \cite{juice}. Trata-se de uma aplicação web moderna e complexa (escrita em Node.js e Angular), projetada pela OWASP para ser um campo de treinamento para segurança de aplicações.
 
 \begin{itemize}
     \item \textbf{Justificativa da Escolha:} O Juice Shop é ideal para uma análise Grey Box, pois seu código-fonte é aberto e acessível. Isso permite que o analista tenha acesso a informações parciais, como a lógica de negócio e a estrutura do código, para guiar os testes de segurança, um cenário comum quando se audita uma aplicação da própria empresa.
@@ -278,99 +309,18 @@ A seleção de ferramentas buscou cobrir as diferentes fases de um teste de inva
     
     \item \textbf{OWASP ZAP \cite{zap}:} Empregado como proxy de interceptação para analisar o tráfego HTTP/S em ambos os ambientes, permitindo a manipulação de requisições para testar falhas de injeção, controle de acesso e outras.
     
-    \item \textbf{Ferramentas Específicas:} Conforme a vulnerabilidade, ferramentas como \textbf{SQL Map \cite{sqlmap}} (para SQL Injection) e \textbf{Hydra \cite{hydra}} (para ataques de força bruta) foram utilizadas para automatizar e validar a exploração.
+    \item \textbf{Ferramentas Específicas:} Conforme a vulnerabilidade, ferramentas como SQL Map \cite{sqlmap} (para SQL Injection) e Hydra \cite{hydra} (para ataques de força bruta) foram utilizadas para automatizar e validar a exploração.
     
-    \item \textbf{Análise de Código-Fonte:} O {Visual Studio \textbf{\cite{vscode}}} Code foi utilizado para navegar e inspecionar o código-fonte do Juice Shop, sendo uma ferramenta essencial para a abordagem Grey Box.
+    \item \textbf{Análise de Código-Fonte:} O {Visual Studio \cite{vscode}} Code foi utilizado para navegar e inspecionar o código-fonte do Juice Shop, sendo uma ferramenta essencial para a abordagem Grey Box.
 
-    \item \textbf{Docker \cite{docker}:} Para a configuração das VMs e exposição das aplicações, serão utilizados containeres Docker para facilitar o processo de \emph{deploy}, onde todoa a aplicação será \emph{conteinerizada}.
+    \item \textbf{Docker \cite{docker}:} Para a configuração das VMs e exposição das aplicações, serão utilizados containeres Docker para facilitar o processo de \emph{deploy}, onde toda a aplicação será \emph{conteinerizada}.
 \end{itemize}
 
-Com base nos Materiais descritos previamente nesta seção, a analise será executada visando ter duas perspectivas de análise das vulnerabilidades, uma onde o pentester não tem informações prévias sobre o alvo (Black box) e outra onde as informações serão limitadas (Grey box).
-As escolhas de infraestrutura (um servidor em uma rede local) se dão para que seja possível simular cenários semelhantes aos encontrados em ambientes produtivos e as ferramentas selecionadas auxiliarão no processo.
-
+Com base nos Materiais descritos previamente nesta seção, a análise será executada visando ter duas perspectivas de análise das vulnerabilidades, uma onde o pentester não tem informações prévias sobre o alvo (Black box) e outra onde as informações serão limitadas (Grey box).
+As escolhas de infraestrutura foram realizadas com o objetivo de simular cenários semelhantes aos encontrados em ambientes produtivos. Essa configuração permite reproduzir de forma realista o comportamento das aplicações, enquanto as ferramentas selecionadas oferecem suporte às etapas de análise, exploração e validação das vulnerabilidades.
 
 \section{Resultados e Discussão}
 Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TCC2, e deverá conter os resultados dos experimentos realizados, discussão comparando os resultados obtidos com outros encontrados em trabalhos similares, além de um parágrafo apontando as limitações da metodologia adotada.
-
- % Figura
-    % https://pt.overleaf.com/learn/latex/Inserting_Images
-     \begin{figure}[h!] % h! pede para o compilador tentar incluir a figura na posição em que foi declarada;
-        \centering
-        \includegraphics[width=0.4\textwidth]{fig1.jpg} % altere a width (intervalo entre 0.0 e 1), caso a imagem não fique na posição correta
-        \caption{Exemplo de uso de figura}
-        \label{fig:figura1}
-    \end{figure}
-
-    % Figuras (usando subfigure)
-    % https://latex-tutorial.com/subfigure-latex/
-    \begin{figure}[h!] % h! pede para o compilador tentar incluir a figura na posição em que foi declarada;
-        \centering
-        \caption{Exemplo com sub-figuras}
-        \begin{subfigure}{0.4\textwidth}
-            \includegraphics[width=\textwidth]{fig1.jpg}
-            \caption{Sub-figura 1}
-            \label{fig:sub_fig1}
-        \end{subfigure}
-        \hspace{1em}
-        \begin{subfigure}{0.4\textwidth}
-            \includegraphics[width=\textwidth]{fig1.jpg}
-            \caption{Sub-figura 2}
-            \label{fig:sub_fig2}
-        \end{subfigure}
-        \label{fig:figura2}
-    \end{figure}
-    
-    % Tabelas
-    % Editor online: https://www.latex-tables.com
-    % Referência: https://ctan.math.illinois.edu/macros/latex/contrib/tabularray/tabularray.pdf
-     \begin{table}[H] % h! pede para o compilador tentar incluir a tabela na posição em que foi declarada;
-        \centering
-        \caption{Minha tabela}
-        \label{tab:tabela1}
-        \begin{tblr}{
-          colspec = {X[l] X[l]}, % Tipo X define células com quebra automática de linha. Use: l=left, r=right, c=center ou j=justify para alinhamento dentro das células
-          width = \linewidth,
-          hlines, % inclui borda horizontal
-          vlines, % inclui borda vertical        
-        }
-        \textbf{cabeçalho 1} & \textbf{cabeçalho 2} \\
-        {texto à esquerda} & {Existem muitas variações das passagens do Lorem Ipsum disponíveis, mas a maior parte sofreu alterações de alguma forma.}
-        \end{tblr}        
-    \end{table}
-
-    % tabela com subtabelas
-    \begin{table}[H]
-        \centering
-        \caption{Tabela com sub-tabelas}
-        \label{tab:tabela2}
-        \begin{subtable}{0.45\linewidth} %subtabela
-            \centering            
-            \begin{tblr}{
-              colspec = {X[l] X[l]}, % Tipo X define células com quebra automática de linha. Use: l=left, r=right, c=center ou j=justify para alinhamento dentro das células
-              width = \linewidth,
-              hlines, % inclui borda horizontal
-              vlines, % inclui borda vertical        
-            }
-            \textbf{cabeçalho 1} & \textbf{cabeçalho 2} \\
-            {Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.} & {The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.}
-            \end{tblr}
-            \caption{Sub-tabela da esquerda}
-        \end{subtable}
-        \hfill
-        \begin{subtable}{0.45\linewidth} %subtabela
-            \centering            
-            \begin{tblr}{
-                  colspec = {X[l] X[l]}, % Tipo X define células com quebra automática de linha. Use: l=left, r=right, c=center ou j=justify para alinhamento dentro das células
-                  width = \linewidth,
-                  hlines, % inclui borda horizontal
-                  vlines, % inclui borda vertical        
-                }
-                \textbf{cabeçalho 1} & \textbf{cabeçalho 2} \\
-                {Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.} & {The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.}
-            \end{tblr}
-            \caption{Sub-tabela da direita}
-        \end{subtable}
-    \end{table}
 
 \section{Considerações Finais}
 Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TCC2.
