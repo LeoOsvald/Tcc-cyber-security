@@ -71,7 +71,7 @@
 % 2025-06-05: (fahadkalil) Adição de novos exemplos de referências bibliográficas, figuras e tabelas / Correção para que campos desnecessários no arquivo .bib sejam ignorados na renderização / Correção de espaçamento no comando \begin{itemize} usando opções adicionais na seção Trabalhos Relacionados / Correção de recuos quando utilizado o comando \begin{description} / Correção na fonte e espaçamentos do comando 'lstlisting'
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CABEÇALHO
-\title{Abordagem Prática de Análise de Vulnerabilidades Web: Black Box e Grey Box com OWASP Top 10 } % titulo
+\title{Abordagem Prática de Análise de Vulnerabilidades Web com base no OWASP Top 10 } % titulo
 
 \author{Leonardo Osvald de Souza\inst{1}, Vitalino Pitt\inst{1}} % autor principal, orientador
 
@@ -274,30 +274,19 @@ A escolha dos 5 trabalhos acima se dá pela a correlação entre as pequisas e o
 \section{Materiais e Métodos}
 Nesta seção serão estabelecidos os métodos adotados para a validação científica desta pesquisa, bem como as ferramentas utilizadas para identificação, exploração e mitigação das vulnerabilidades encontradas, tendo como principal referencial o \emph{OWASP Top 10}.
 
-\subsection{Máquinas virtuais disponíveis na WEB}
-Para a validação e análise das vulnerabilidades estudadas, serão utilizadas máquinas virtuais e aplicações deliberadamente vulneráveis, obtidas em repositórios públicos (GitHub) para fins educacionais. 
+\subsection{Pentest no site institucional Atitus}
+Para a validação e análise das vulnerabilidades listadas no OWASP top 10, será relizado um pentest no site institucional Atitus. Com autorização prévia, serão realizados os passos do Pentest com o intuito de colocar em prática as abordagens previamente discutidas, tendo como base o OWASP TOP 10 e o padrão PTES para o Pentest.
 
-Visando simular um ambiente próximo ao encontrado em cenários reais, será empregada uma rede local composta por duas aplicações vulneráveis executadas em um único equipamento (servidor/notebook) e atacadas a partir de outro dispositivo na mesma rede. A abordagem do pentest adotada combina dois modos: \emph{gray-box} para uma das aplicações e \emph{black-box} para a outra, permitindo avaliar diferenças na detecção e exploração de falhas sob distintos níveis de informação.
+Com autorização prévia o pentest será relizado e as evidencias serão descritas no presente documento. Não serão utilizados métodos de Dos, pois podem gerar instablidade no site. O dominio a ser atacado será o www.atitus.edu.br.
 
+\subsection{Reconhecimento}
 
-\subsection{Cenário Black Box: Metasploitable 3 }
+Nesta etapa, serão empregadas ferramentas de reconhecimento e coleta de informações com o objetivo de identificar características do alvo, como sistema operacional do host, servidores DNS, serviços expostos e possíveis vetores de ataque. Essa fase é fundamental para o mapeamento inicial da superfície de ataque da aplicação em análise.
 
-Para simular um teste de penetração do tipo \textbf{Black Box}, onde o analista não possui conhecimento prévio da infraestrutura interna, foi utilizado o Metasploitable 3. Este ambiente é uma máquina virtual intencionalmente vulnerável, baseada em Windows Server, que expõe uma variedade de serviços e aplicações, incluindo tecnologias do ecossistema Microsoft.
-
-\begin{itemize}
-    \item \textbf{Justificativa da Escolha:} A escolha do Metasploitable 3 se deu por sua natureza como um "alvo desconhecido". Ele simula um servidor corporativo real, permitindo que a análise siga as fases de um pentest ético (reconhecimento, varredura, exploração) sem qualquer informação privilegiada.
-    
-    \item \textbf{Abordagem (Black Box):} O teste foi iniciado conhecendo apenas o endereço IP da máquina. A partir daí, todas as informações sobre serviços, tecnologias e vulnerabilidades foram obtidas através das ferramentas de análise, replicando a perspectiva de um atacante externo.
-\end{itemize}
-
-\subsection{Cenário Grey Box: OWASP Juice Shop}
-
-Para a simulação de um teste do tipo Grey Box, foi escolhido o OWASP Juice Shop \cite{juice}. Trata-se de uma aplicação web moderna e complexa (escrita em Node.js e Angular), projetada pela OWASP para ser um campo de treinamento para segurança de aplicações.
+O sistema operacional escolhido é o Kali Linux, amplamente adotado em testes de segurança por oferecer diversas ferramentas especializadas para atividades de pentest e análise de vulnerabilidades. Entre essas ferramentas, destaca-se o Nmap, utilizado para descoberta de hosts, identificação de portas abertas, serviços ativos e tecnologias presentes no ambiente investigado.
 
 \begin{itemize}
-    \item \textbf{Justificativa da Escolha:} O Juice Shop é ideal para uma análise Grey Box, pois seu código-fonte é aberto e acessível. Isso permite que o analista tenha acesso a informações parciais, como a lógica de negócio e a estrutura do código, para guiar os testes de segurança, um cenário comum quando se audita uma aplicação da própria empresa.
-    
-    \item \textbf{Abordagem (Grey Box):} A análise foi conduzida com acesso total ao repositório do código-fonte no GitHub. O código foi consultado para entender como certas funcionalidades foram implementadas, identificar potenciais falhas lógicas e construir ataques mais direcionados. Por exemplo, ao analisar o código de autenticação, foi possível formular hipóteses sobre como explorar a vulnerabilidade de "Quebra de Autenticação".
+    \item \textbf{Intelligence Gathering} Esta etapa do pentest tem como objetivo levantar informações sobre o alvo, incluindo sistema operacional, frameworks utilizados, localização do servidor, presença de firewall, entre outros aspectos. Inicialmente, será utilizado o Google Dorks para identificar subdomínios, possíveis páginas antigas desatualizadas e arquivos ou credenciais expostas.
 \end{itemize}
 
 \subsection{Ferramentas e Instrumentos de Análise}
@@ -309,18 +298,16 @@ A seleção de ferramentas buscou cobrir as diferentes fases de um teste de inva
     
     \item \textbf{OWASP ZAP \cite{zap}:} Empregado como proxy de interceptação para analisar o tráfego HTTP/S em ambos os ambientes, permitindo a manipulação de requisições para testar falhas de injeção, controle de acesso e outras.
     
-    \item \textbf{Ferramentas Específicas:} Conforme a vulnerabilidade, ferramentas como SQL Map \cite{sqlmap} (para SQL Injection) e Hydra \cite{hydra} (para ataques de força bruta) foram utilizadas para automatizar e validar a exploração.
-    
-    \item \textbf{Análise de Código-Fonte:} O {Visual Studio \cite{vscode}} Code foi utilizado para navegar e inspecionar o código-fonte do Juice Shop, sendo uma ferramenta essencial para a abordagem Grey Box.
-
-    \item \textbf{Docker \cite{docker}:} Para a configuração das VMs e exposição das aplicações, serão utilizados containeres Docker para facilitar o processo de \emph{deploy}, onde toda a aplicação será \emph{conteinerizada}.
 \end{itemize}
 
-Com base nos Materiais descritos previamente nesta seção, a análise será executada visando ter duas perspectivas de análise das vulnerabilidades, uma onde o pentester não tem informações prévias sobre o alvo (Black box) e outra onde as informações serão limitadas (Grey box).
-As escolhas de infraestrutura foram realizadas com o objetivo de simular cenários semelhantes aos encontrados em ambientes produtivos. Essa configuração permite reproduzir de forma realista o comportamento das aplicações, enquanto as ferramentas selecionadas oferecem suporte às etapas de análise, exploração e validação das vulnerabilidades.
+Com base nos Materiais descritos previamente nesta seção, a análise será executada visando obter informações sobre o alvo da istituição, levantar evidencias e relatar eventuais problemas na segurança do site.
 
 \section{Resultados e Discussão}
-Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TCC2, e deverá conter os resultados dos experimentos realizados, discussão comparando os resultados obtidos com outros encontrados em trabalhos similares, além de um parágrafo apontando as limitações da metodologia adotada.
+
+Nesta seção, serão abordados os pontos discutidos préviamente, serão levantadas evidências do processo como um todo e o OWASP Top 10 será a base para o processo. 
+Dos 10 itens, serão incluidos os mais importantes e críticos para uma aplicação. 
+
+
 
 \section{Considerações Finais}
 Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TCC2.

@@ -2503,13 +2503,8 @@
     <bcf:citekey order="36" intorder="1">duarte2020</bcf:citekey>
     <bcf:citekey order="37" intorder="1">Matthew2020</bcf:citekey>
     <bcf:citekey order="38" intorder="1">Santos2023</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">juice</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">nmap2</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">zap</bcf:citekey>
-    <bcf:citekey order="42" intorder="1">sqlmap</bcf:citekey>
-    <bcf:citekey order="43" intorder="1">hydra</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">vscode</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">docker</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">nmap2</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">zap</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

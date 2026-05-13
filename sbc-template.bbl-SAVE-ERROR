@@ -136,6 +136,36 @@
       \verb https://journal-bcs.springeropen.com/articles/10.1186/s13173-017-0051-1
       \endverb
     \endentry
+    \entry{docker}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c5fd214cdd0d2b3b4272e73b022ba5c2}{%
+           family={Docker},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{fullhash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{fullhashraw}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{bibnamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorbibnamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authornamehash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorfullhash}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \strng{authorfullhashraw}{c5fd214cdd0d2b3b4272e73b022ba5c2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{Docker}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.docker.com/
+      \endverb
+      \verb{url}
+      \verb https://www.docker.com/
+      \endverb
+    \endentry
     \entry{duarte2020}{thesis}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=12669a95cdff5b26d1159c37c864ace0}{%
@@ -274,6 +304,22 @@
       \verb https://bdm.unb.br/bitstream/10483/40115/1/2024_DafneMoreira_LucasAndrade_tcc.pdf
       \endverb
     \endentry
+    \entry{hydra}{misc}{}{}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{Hydra}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.kali.org/tools/hydra/
+      \endverb
+      \verb{url}
+      \verb https://www.kali.org/tools/hydra/
+      \endverb
+    \endentry
     \entry{joseph2024}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=638cd0ab0a35c4fbd7c3f0028da89149}{%
@@ -372,7 +418,7 @@
       \verb https://nmap.org/
       \endverb
     \endentry
-    \entry{owasp10}{misc}{}{}
+    \entry{juice}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=24b95a7fdad5a850196cd87546dcc70b}{%
            family={OWASP},
@@ -387,6 +433,37 @@
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
       \field{extraname}{1}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{OWASP Juice Shop}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://owasp.org/www-project-juice-shop/
+      \endverb
+      \verb{url}
+      \verb https://owasp.org/www-project-juice-shop/
+      \endverb
+    \endentry
+    \entry{owasp10}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=24b95a7fdad5a850196cd87546dcc70b}{%
+           family={OWASP},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{fullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{fullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{bibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
+      \strng{authorfullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
+      \field{extraname}{2}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
       \field{extradatescope}{labelyear}
@@ -417,7 +494,7 @@
       \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
       \field{extradatescope}{labelyear}
@@ -589,6 +666,38 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/pdf/2109.06068
+      \endverb
+    \endentry
+    \entry{sqlmap}{misc}{}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{SQL Map}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://sqlmap.org/
+      \endverb
+      \verb{url}
+      \verb https://sqlmap.org/
+      \endverb
+    \endentry
+    \entry{vscode}{misc}{}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{Visual Studio Code}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://code.visualstudio.com/
+      \endverb
+      \verb{url}
+      \verb https://code.visualstudio.com/
       \endverb
     \endentry
     \entry{Zennaro2023}{article}{}{}
