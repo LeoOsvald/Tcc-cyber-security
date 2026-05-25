@@ -90,7 +90,7 @@ Passo Fundo -- RS -- Brasil
 \end{abstract}
      
 \begin{resumo}
-  A crescente dependência de sistemas conectados elevou significativamente a exposição de organizações a ameaças cibernéticas, especialmente em aplicações web e APIs. Vulnerabilidades classificadas pelo OWASP Top 10 continuam entre as mais exploradas por agentes mal-intencionados, tornando essencial a compreensão de seus impactos e a adoção de práticas de desenvolvimento seguro. Este trabalho tem como objetivo analisar as vulnerabilidades listadas no OWASP Top 10 (2021) por meio de experimentos conduzidos em ambientes deliberadamente vulneráveis. Para isso, foram selecionadas duas plataformas amplamente utilizadas em treinamentos de segurança: Metasploitable 3, para testes do tipo Black Box, e OWASP Juice Shop, para a abordagem Grey Box com acesso ao código-fonte. A metodologia inclui etapas de reconhecimento, varredura, exploração e validação utilizando ferramentas como Nmap, OWASP ZAP, SQLMap e Hydra, além de análise manual de trechos de código. Os resultados esperados envolvem demonstrar a exploração das principais vulnerabilidades identificadas, compreender sua criticidade e apresentar recomendações de mitigação alinhadas às boas práticas de segurança. A pesquisa busca contribuir para a formação de desenvolvedores e analistas de segurança, reforçando a importância de avaliações contínuas e metodologias estruturadas de pentest na construção de aplicações robustas.
+  A crescente dependência de sistemas conectados elevou significativamente a exposição de organizações a ameaças cibernéticas, especialmente em aplicações web e APIs. Vulnerabilidades classificadas pelo OWASP Top 10 continuam entre as mais exploradas por agentes mal-intencionados, tornando essencial a compreensão de seus impactos e a adoção de práticas de desenvolvimento seguro. Este trabalho tem como objetivo analisar as vulnerabilidades listadas no OWASP Top 10 (2021) por meio de um Pentest realizado no site institucional Atitus. Com autorização prévia da instiuição, serão relizados as etapas de um pentest com base no PTES, fazendo o reconhecimento, coleta de informações, exploração, e um relátorio com oque foi identificado atráves dos testes. A metodologia inclui etapas de reconhecimento, varredura, exploração e validação utilizando ferramentas amplamente utilizadas no contexto de cyber-segurança. Os resultados esperados envolvem demonstrar etapas de um processo de pentest, evindenciar testes realizados e respectivos resultados e citar melhorias sobre o ambiente web da plataforma, assim como reportar eventuais vulnerabilidades ecnontradas. A pesquisa busca contribuir para a formação de desenvolvedores e analistas de segurança, reforçando a importância de avaliações contínuas e metodologias estruturadas de pentest na construção de aplicações robustas.
 
     Palavras-chave: Segurança da Informação; OWASP Top 10; Pentest; Vulnerabilidades; Aplicações Web.
 \end{resumo}
@@ -103,9 +103,9 @@ Uma vulnerabilidade consiste em uma fraqueza capaz de comprometer a confidencial
 
 Nesse contexto, iniciativas como o OWASP Top 10 desempenham papel fundamental ao catalogar e classificar as vulnerabilidades mais comuns observadas em sistemas ao redor do mundo. Esse documento, amplamente adotado pela comunidade de segurança, orienta desenvolvedores e equipes técnicas na identificação e mitigação de riscos prioritários.
 
-Diante da relevância do tema, o objetivo geral deste trabalho é identificar, explorar e analisar vulnerabilidades presentes nas listas do OWASP Top 10 por meio de testes de intrusão em ambientes vulneráveis.
+Diante da relevância do tema, o objetivo geral deste trabalho é identificar, explorar e analisar vulnerabilidades presentes nas listas do OWASP Top 10 por meio através de um Pentest a ser realizado no site institucional da faculdade Atitus (atitus.edu.br).
 
-Essa abordagem busca não apenas demonstrar a presença e o impacto das vulnerabilidades, mas também apresentar técnicas de detecção e medidas de mitigação, contribuindo para a formação de boas práticas de segurança no desenvolvimento e manutenção de aplicações.
+Essa abordagem busca demonstrar etapas de um teste de penetração (Pentest), desde o reconhecimento até o relatório final, assim como evindenciar técnicas exploratórias das principais e mais comuns falhas de segurança, listadas no OWASP TOP 10.
 \section{Referencial Teórico}
 Esta seção apresenta os fundamentos teóricos que embasam a pesquisa, abordando os principais conceitos, normas e vulnerabilidades relacionados à segurança de aplicações web. O entendimento desses elementos é essencial para a correta identificação, análise e mitigação de riscos de segurança, bem como para a execução dos testes de invasão propostos neste trabalho.
 
@@ -308,6 +308,46 @@ Nesta seção, serão abordados os pontos discutidos préviamente, serão levant
 Dos 10 itens, serão incluidos os mais importantes e críticos para uma aplicação. 
 
 
+\subsection{Reconhecimento e coleta de informções}
+
+Esta etapa do processo de pentes, busca obter o máximo de informações possíveis sobre o alvo, desde informações referentes à arquitetura do ecossitema institucional, à profissionais que trabalham dentro da instiuição. 
+Quanto mais rica essa sessão, maior potencial tem o pentest. 
+Na fase de reconhecimento e levantamento inicial de informações do alvo, foram utilizadas ferramentas de fingerprinting, análise HTTP, entre outros. 
+Com o objetivo de identificar tecnologias, serviços expostos e possíveis características da infraestrutura utilizada pela aplicação institucional da Atitus, foram utilizadas diversas ferramentas amplamente utilizadas no processo de Pentest.
+
+\subsubsection{Informações sobre o servidor com NMAP}
+Dentro do processo de reconhecimento, o Nmap foi usado para obter informações a respeito de portas expostas e serviços por trás dessas portas. 
+O comando utilizado foi "nmap -sV atitus.edu.br", que tem como objetivo identificar portas e serviços expostos à web.
+Na imagem abaixo nota se que ambas portas 80 e 443 estão expostas, dentro do esperado, pois tratam se de portas padrões em serviços web.
+Também foi identificada uma porta 8443, que costuma ser uma porta HTTPS secundária.
+
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{nmap.png}
+    \caption{Scan com Nmap}
+    
+\end{figure}
+
+
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{curl.png}
+    \caption{Http request usando Curl}
+\end{figure}
+
+
+
+Posteriormente, durante a análise autenticada do portal institucional através das ferramentas de desenvolvedor do navegador Google Chrome, foram identificados os cookies .ASPXAUTH e ASP.NET SessionId, amplamente associados a aplicações desenvolvidas utilizando ASP.NET sobre o .NET Framework. Além disso, o header X-Powered-By: ASP.NET reforçou a hipótese de utilização da stack Microsoft no backend da aplicação. O cookie .ASPXAUTH é tradicionalmente empregado em mecanismos de autenticação Forms Authentication do ASP.NET, indicando gerenciamento de sessão baseado em cookies autenticados no lado servidor.
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{aspnet.png}
+    \caption{Ferramenta de desenvolvedor do Chorme}
+\end{figure}
 
 \section{Considerações Finais}
 Essa seção deverá ser escrita na segunda parte do trabalho, conhecida como TCC2.
