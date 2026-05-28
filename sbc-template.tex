@@ -315,8 +315,45 @@ Quanto mais rica essa sessão, maior potencial tem o pentest.
 Na fase de reconhecimento e levantamento inicial de informações do alvo, foram utilizadas ferramentas de fingerprinting, análise HTTP, entre outros. 
 Com o objetivo de identificar tecnologias, serviços expostos e possíveis características da infraestrutura utilizada pela aplicação institucional da Atitus, foram utilizadas diversas ferramentas amplamente utilizadas no processo de Pentest.
 
+
+\subsubsection{Reunindo informações com WhoIs}
+
+Dentro da etapa de reconhecimento, o atacante busca não apenas obter informações técnicas, mas sim, obter informações sobre o contexto geral do alvo. 
+Teno isso em vista, ferramentas como o Whois do registro.br, trazem varias informações pertinentes ao processo de Intelligence Gathering. 
+Abaixo, podemos identificar responsáveis pelo dominio "atitus.edu.br", assim como uma empresa, que obteve o dominio em 2013, podendo ser a empresa responsável pelo desenvolvimento.
+Percebe-se também, a presença de dois DNSs apontando para a Cloudfare, indicando a possível existencia de um Web Application Firewall.
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{registroBR.png}
+    \caption{Scan com Nmap}
+    
+\end{figure}
+
+\subsubsection{Enumeração de DNS}
+
+Durante a etapa de enumeração DNS, foi utilizada a ferramenta dnsenum com o objetivo de coletar informações relacionadas à infraestrutura do domínio atitus.edu.br, incluindo registros DNS, servidores de nomes (NS) e servidores de e-mail (MX). Apesar de alguns parâmetros informados no comando terem retornado erro de sintaxe (Value "-f" invalid for option s e Unknown option: i), a ferramenta conseguiu realizar parcialmente a enumeração do domínio. Como resultado, foram identificados múltiplos endereços IP associados ao domínio principal, todos pertencentes à infraestrutura da Cloudflare, reforçando a presença de proteção WAF no ambiente. Também foram identificados os servidores DNS autoritativos alexis.ns.cloudflare.com e ines.ns.cloudflare.com, reforçando a utilização da Cloudflare como intermediária da infraestrutura web. Além disso, a enumeração revelou que o serviço de e-mail da instituição utiliza a infraestrutura do Google Workspace, evidenciada pelos registros MX apontando para aspmx.l.google.com e demais servidores secundários do Google. Essas informações auxiliam no mapeamento inicial da superfície de ataque e na compreensão da arquitetura tecnológica utilizada pelo domínio analisado.
+
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{dns1.png}
+    \caption{Scan com Nmap}
+    
+\end{figure}
+
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=1\textwidth]{dns2.png}
+    \caption{Scan com Nmap}
+    
+\end{figure}
+
 \subsubsection{Informações sobre o servidor com NMAP}
-Dentro do processo de reconhecimento, o Nmap foi usado para obter informações a respeito de portas expostas e serviços por trás dessas portas. 
+    Dentro do processo de reconhecimento, o Nmap foi usado para obter informações a respeito de portas expostas e serviços por trás dessas portas. 
 O comando utilizado foi "nmap -sV atitus.edu.br", que tem como objetivo identificar portas e serviços expostos à web.
 Na imagem abaixo nota se que ambas portas 80 e 443 estão expostas, dentro do esperado, pois tratam se de portas padrões em serviços web.
 Também foi identificada uma porta 8443, que costuma ser uma porta HTTPS secundária.
@@ -328,14 +365,6 @@ Também foi identificada uma porta 8443, que costuma ser uma porta HTTPS secund�
     \includegraphics[width=1\textwidth]{nmap.png}
     \caption{Scan com Nmap}
     
-\end{figure}
-
-
-\begin{figure}[H]
-    \label{fig:id_figura}
-    \centering
-    \includegraphics[width=1\textwidth]{curl.png}
-    \caption{Http request usando Curl}
 \end{figure}
 
 
