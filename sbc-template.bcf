@@ -2504,7 +2504,10 @@
     <bcf:citekey order="37" intorder="1">Matthew2020</bcf:citekey>
     <bcf:citekey order="38" intorder="1">Santos2023</bcf:citekey>
     <bcf:citekey order="39" intorder="1">nmap2</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">zap</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">dnsenum</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">dnsdumpster</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">whatweb</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">wafw00f</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
@@ -2548,4 +2551,14 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global"
+                namehashtemplatename="global">
+  </bcf:datalist>
 </bcf:controlfile>

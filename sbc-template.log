@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.23)  10 JUN 2026 17:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.23)  11 JUN 2026 22:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1329,6 +1329,18 @@ LaTeX Warning: Label `fig:id_figura' multiply defined.
 LaTeX Warning: Label `fig:id_figura' multiply defined.
 
 
+LaTeX Warning: Label `fig:dns' multiply defined.
+
+
+LaTeX Warning: Label `fig:dns' multiply defined.
+
+
+LaTeX Warning: Label `fig:id_figura' multiply defined.
+
+
+LaTeX Warning: Label `fig:id_figura' multiply defined.
+
+
 LaTeX Warning: Label `fig:id_figura' multiply defined.
 
 
@@ -1506,8 +1518,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] Excluding 'comment' comment. [2]
-<mapping.png, id=103, 469.755pt x 129.48375pt>
+{C:/Users/leona/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] [2] Excluding 'comment' comment.
+<mapping.png, id=79, 469.755pt x 129.48375pt>
 File: mapping.png Graphic file (type png)
 <use mapping.png>
 Package pdftex.def Info: mapping.png  used on input line 171.
@@ -1515,13 +1527,13 @@ Package pdftex.def Info: mapping.png  used on input line 171.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 172.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
-)
-<2025-mappings.png, id=105, 932.48375pt x 257.96375pt>
+) [3 <./mapping.png>]
+<2025-mappings.png, id=89, 932.48375pt x 257.96375pt>
 File: 2025-mappings.png Graphic file (type png)
 <use 2025-mappings.png>
 Package pdftex.def Info: 2025-mappings.png  used on input line 187.
 (pdftex.def)             Requested size: 426.79135pt x 118.06645pt.
- [3 <./mapping.png>] [4 <./2025-mappings.png>]
+ [4 <./2025-mappings.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
@@ -1531,144 +1543,120 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 309.
  (C:\Users\leona\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [7] [8] [9] [10]
-<registroBR.png, id=209, 469.00218pt x 682.04813pt>
+) [7] [8] [9] [10] [11]
+<registroBR.png, id=198, 469.00218pt x 682.04813pt>
 File: registroBR.png Graphic file (type png)
 <use registroBR.png>
-Package pdftex.def Info: registroBR.png  used on input line 464.
-(pdftex.def)             Requested size: 426.79135pt x 620.65436pt.
+Package pdftex.def Info: registroBR.png  used on input line 492.
+(pdftex.def)             Requested size: 341.43437pt x 496.52765pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12 <./registroBR.png>]
-<dns1.png, id=220, 490.83376pt x 440.39531pt>
+ [12] [13 <./registroBR.png>]
+<dns1.png, id=210, 490.83376pt x 440.39531pt>
 File: dns1.png Graphic file (type png)
 <use dns1.png>
-Package pdftex.def Info: dns1.png  used on input line 484.
-(pdftex.def)             Requested size: 426.79135pt x 382.94594pt.
-<dns2.png, id=221, 603.75563pt x 508.90125pt>
+Package pdftex.def Info: dns1.png  used on input line 512.
+(pdftex.def)             Requested size: 308.1559pt x 276.48956pt.
+<dns2.png, id=211, 603.75563pt x 508.90125pt>
 File: dns2.png Graphic file (type png)
 <use dns2.png>
-Package pdftex.def Info: dns2.png  used on input line 493.
-(pdftex.def)             Requested size: 426.79135pt x 359.73831pt.
+Package pdftex.def Info: dns2.png  used on input line 516.
+(pdftex.def)             Requested size: 328.02231pt x 276.48763pt.
+ [14 <./dns1.png> <./dns2.png>]
+<DNSDUMPSTER.png, id=219, 702.37407pt x 684.30656pt>
+File: DNSDUMPSTER.png Graphic file (type png)
+<use DNSDUMPSTER.png>
+Package pdftex.def Info: DNSDUMPSTER.png  used on input line 530.
+(pdftex.def)             Requested size: 283.78474pt x 276.48482pt.
+<dnsdumpster2.png, id=220, 947.03813pt x 127.22531pt>
+File: dnsdumpster2.png Graphic file (type png)
+<use dnsdumpster2.png>
+Package pdftex.def Info: dnsdumpster2.png  used on input line 550.
+(pdftex.def)             Requested size: 426.78459pt x 57.33432pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <./dns1.png>]
-<nmap.png, id=229, 485.56406pt x 377.15906pt>
+ [15 <./DNSDUMPSTER.png>]
+<nmap.png, id=228, 485.56406pt x 377.15906pt>
 File: nmap.png Graphic file (type png)
 <use nmap.png>
-Package pdftex.def Info: nmap.png  used on input line 508.
-(pdftex.def)             Requested size: 426.79135pt x 331.5039pt.
+Package pdftex.def Info: nmap.png  used on input line 576.
+(pdftex.def)             Requested size: 341.43437pt x 265.20657pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./dns2.png>]
-<aspnet.png, id=236, 878.53218pt x 701.62125pt>
+ [16 <./dnsdumpster2.png>]
+Overfull \hbox (9.47235pt too wide) in paragraph at lines 580--582
+\T1/ptm/m/n/12 ra-ção de sub-do-mí-nios, foi re-a-li-zado um es-ca-ne-a-mento no host \T1/cmtt/m/n/12 faixabixo.atitus.edu.br
+ []
+
+<nmap2.png, id=235, 567.62062pt x 326.72063pt>
+File: nmap2.png Graphic file (type png)
+<use nmap2.png>
+Package pdftex.def Info: nmap2.png  used on input line 597.
+(pdftex.def)             Requested size: 341.43437pt x 196.53241pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./nmap.png>]
+<whatwebatitus.png, id=242, 892.83563pt x 139.27031pt>
+File: whatwebatitus.png Graphic file (type png)
+<use whatwebatitus.png>
+Package pdftex.def Info: whatwebatitus.png  used on input line 617.
+(pdftex.def)             Requested size: 341.43437pt x 53.25902pt.
+ [18 <./nmap2.png> <./whatwebatitus.png>]
+<whatwebSub.png, id=251, 891.33pt x 165.61874pt>
+File: whatwebSub.png Graphic file (type png)
+<use whatwebSub.png>
+Package pdftex.def Info: whatwebSub.png  used on input line 633.
+(pdftex.def)             Requested size: 341.43437pt x 63.4412pt.
+
+Overfull \hbox (33.65216pt too wide) in paragraph at lines 638--641
+[]\T1/ptm/m/n/12 Durante a fase de re-co-nhe-ci-mento, o sub-do-mí-nio \T1/cmtt/m/n/12 portaleducacional.atitus.edu.br
+ []
+
+<aspnet.png, id=252, 878.53218pt x 701.62125pt>
 File: aspnet.png Graphic file (type png)
 <use aspnet.png>
-Package pdftex.def Info: aspnet.png  used on input line 523.
-(pdftex.def)             Requested size: 426.79135pt x 340.8533pt.
+Package pdftex.def Info: aspnet.png  used on input line 655.
+(pdftex.def)             Requested size: 341.43437pt x 272.67836pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./nmap.png>] [16 <./aspnet.png>] [17]
-Underfull \hbox (badness 1596) in paragraph at lines 600--606
-\T1/cmtt/m/n/12 Content-Security-Policy \T1/ptm/m/n/12 e \T1/cmtt/m/n/12 X-Content-Type-Options \T1/ptm/m/n/12 são re-co-men-da-dos pelo
- []
-
-[18]
-Underfull \vbox (badness 2503) has occurred while \output is active []
-
- [19]
-Overfull \hbox (0.16725pt too wide) in paragraph at lines 686--695
-\T1/ptm/m/n/12 ci-ada pe-los ser-vi-do-res DNS \T1/cmtt/m/n/12 alexis.ns.cloudflare.com \T1/ptm/m/n/12 e \T1/cmtt/m/n/12 ines.ns.cloudflare.com
- []
-
-
-LaTeX Warning: Reference `tab:consolidado' on page 20 undefined on input line 706.
-
-[20] (sbc-template.aux)
+ [19 <./whatwebSub.png>]
+<feroxbuster.png, id=260, 1267.73625pt x 615.80063pt>
+File: feroxbuster.png Graphic file (type png)
+<use feroxbuster.png>
+Package pdftex.def Info: feroxbuster.png  used on input line 666.
+(pdftex.def)             Requested size: 341.43437pt x 165.84555pt.
+ [20 <./aspnet.png> <./feroxbuster.png>] [21] [22] (sbc-template.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `sbc-template.out' has not changed.
-(rerunfilecheck)             Checksum: E653A1ECB0F31B10D9F9EE69E8448648;4104.
+(rerunfilecheck)             Checksum: 4C2B411F797ADE1B028E493E23F7C4CC;2537.
 Package logreq Info: Writing requests to 'sbc-template.run.xml'.
 \openout1 = `sbc-template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25933 strings out of 467871
- 473979 string characters out of 5418375
- 1362447 words of memory out of 5000000
- 54407 multiletter control sequences out of 15000+600000
- 661502 words of font info for 81 fonts, out of 8000000 for 9000
+ 26026 strings out of 467871
+ 476589 string characters out of 5418375
+ 1375862 words of memory out of 5000000
+ 54503 multiletter control sequences out of 15000+600000
+ 661187 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,8n,79p,752b,4312s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{cite.0@zap} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@nmap2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Santos2023} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@duarte2020} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@sampaio2021} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Enoch2020} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Zennaro2023} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Bertoglio2017} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@unb2024} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@ifgoiano2022} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@souza2021} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@joseph2024} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@Matthew2020} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@leite2022} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@owasp10} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{cite.0@almeida} has been referenced but does not exist, replaced by a fixed one
-
- <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecit1200.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on sbc-template.pdf (20 pages, 763473 bytes).
+ <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\leona\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/leona/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on sbc-template.pdf (22 pages, 1508407 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 426 PDF objects out of 1000 (max. 8388607)
+ 68 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 

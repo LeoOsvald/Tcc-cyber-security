@@ -136,6 +136,66 @@
       \verb https://journal-bcs.springeropen.com/articles/10.1186/s13173-017-0051-1
       \endverb
     \endentry
+    \entry{dnsdumpster}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e68ae47fd4ceb481949307a575c4645}{%
+           family={DNSDumpster},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{fullhash}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{fullhashraw}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{bibnamehash}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{authorbibnamehash}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{authornamehash}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{authorfullhash}{8e68ae47fd4ceb481949307a575c4645}
+      \strng{authorfullhashraw}{8e68ae47fd4ceb481949307a575c4645}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{DNSDumpster}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://dnsdumpster.com
+      \endverb
+      \verb{url}
+      \verb https://dnsdumpster.com
+      \endverb
+    \endentry
+    \entry{dnsenum}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=4f9f9566e82dfc092324c061aab4fbaa}{%
+           family={DNSenum},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{fullhash}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{fullhashraw}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{bibnamehash}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{authorbibnamehash}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{authornamehash}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{authorfullhash}{4f9f9566e82dfc092324c061aab4fbaa}
+      \strng{authorfullhashraw}{4f9f9566e82dfc092324c061aab4fbaa}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{DNSenum}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/fwaeytens/dnsenum
+      \endverb
+      \verb{url}
+      \verb https://github.com/fwaeytens/dnsenum
+      \endverb
+    \endentry
     \entry{duarte2020}{thesis}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=12669a95cdff5b26d1159c37c864ace0}{%
@@ -386,7 +446,6 @@
       \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
       \strng{authorfullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
-      \field{extraname}{1}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
       \field{extradatescope}{labelyear}
@@ -401,37 +460,6 @@
       \endverb
       \verb{url}
       \verb https://owasp.org/Top10
-      \endverb
-    \endentry
-    \entry{zap}{misc}{}{}
-      \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=24b95a7fdad5a850196cd87546dcc70b}{%
-           family={OWASP},
-           familyi={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{fullhash}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{fullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{bibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{authorbibnamehash}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{authornamehash}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{authorfullhash}{24b95a7fdad5a850196cd87546dcc70b}
-      \strng{authorfullhashraw}{24b95a7fdad5a850196cd87546dcc70b}
-      \field{extraname}{2}
-      \field{sortinit}{O}
-      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Acesso em: 01 nov. 2025}
-      \field{title}{OWASP ZAP}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://owasp.org/www-chapter-dorset/assets/presentations/2020-01/20200120-OWASPDorset-ZAP-DanielW.pdf
-      \endverb
-      \verb{url}
-      \verb https://owasp.org/www-chapter-dorset/assets/presentations/2020-01/20200120-OWASPDorset-ZAP-DanielW.pdf
       \endverb
     \endentry
     \entry{sampaio2021}{thesis}{}{}
@@ -589,6 +617,66 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/pdf/2109.06068
+      \endverb
+    \endentry
+    \entry{wafw00f}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=80d3c7e6e926d82ca7df75dd6636a7c4}{%
+           family={WafW00f},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{fullhash}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{fullhashraw}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{bibnamehash}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{authorbibnamehash}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{authornamehash}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{authorfullhash}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \strng{authorfullhashraw}{80d3c7e6e926d82ca7df75dd6636a7c4}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{WafW00f}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/EnableSecurity/wafw00f
+      \endverb
+      \verb{url}
+      \verb https://github.com/EnableSecurity/wafw00f
+      \endverb
+    \endentry
+    \entry{whatweb}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cdf20219f2cb2fddf81407d140192ace}{%
+           family={WhatWeb},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{fullhash}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{fullhashraw}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{bibnamehash}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{authorbibnamehash}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{authornamehash}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{authorfullhash}{cdf20219f2cb2fddf81407d140192ace}
+      \strng{authorfullhashraw}{cdf20219f2cb2fddf81407d140192ace}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Acesso em: 01 nov. 2025}
+      \field{title}{WhatWeb}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/urbanadventurer/WhatWeb
+      \endverb
+      \verb{url}
+      \verb https://github.com/urbanadventurer/WhatWeb
       \endverb
     \endentry
     \entry{Zennaro2023}{article}{}{}

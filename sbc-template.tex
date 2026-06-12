@@ -73,11 +73,11 @@
 % CABEÇALHO
 \title{Abordagem Prática de Análise de Vulnerabilidades Web com base no OWASP Top 10 } % titulo
 
-\author{Leonardo Osvald de Souza\inst{1}, Vitalino Pitt\inst{1}} % autor principal, orientador
+\author{Leonardo Osvald de Souza\inst{1}, Vitalino Pitt\inst{1},Rafael Basso Reis\inst{1}} % autor principal, orientador
 
 \address{Ciência da Computação -- Atitus Educação\\
 Passo Fundo -- RS -- Brasil
-\email{1121661@atitus.edu.br, vitalino.pitt@atitus.edu.br}
+\email{1121661@atitus.edu.br, vitalino.pitt@atitus.edu.br,rafael.reis@atitus.edu.br}
 }
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -85,17 +85,17 @@ Passo Fundo -- RS -- Brasil
 \maketitle % Não remova essa linha!
 
 \begin{abstract} % resumo em inglês
-  The increasing reliance on connected systems has significantly expanded organizations’ exposure to cyber threats, 
-  particularly in web applications and APIs. Vulnerabilities classified in the OWASP Top 10 remain among the most 
-  exploited by malicious actors, emphasizing the need for secure development practices and a solid understanding of their impact.
-   This study aims to analyze the vulnerabilities listed in the OWASP Top 10 (2021) through experiments conducted in intentionally
-    vulnerable environments. Two widely known platforms were selected for this purpose: Metasploitable 3, used for Black Box testing,
-     and OWASP Juice Shop, used in a Grey Box approach with access to the source code. The methodology includes reconnaissance, scanning,
-      exploitation, and validation phases using tools such as Nmap, OWASP ZAP, SQLMap, and Hydra, in addition to manual code analysis.
-       The expected results involve demonstrating the exploitation of the main identified vulnerabilities, assessing their severity,
-        and presenting mitigation strategies aligned with security best practices. This research aims to support developers and security 
-        analysts by highlighting the importance of continuous assessments and structured pentesting methodologies for building secure and resilient applications.
-  Keywords: Information Security; OWASP Top 10; Penetration Testing; Vulnerabilities; Web Applications.
+  The increasing dependence on connected systems has significantly increased organizations' exposure to cyber threats, particularly in web applications and APIs. 
+  Vulnerabilities classified within the OWASP Top 10 continue to be among the most frequently exploited by malicious actors, making it essential to understand their 
+  impacts and adopt secure software development practices. This study aims to analyze the vulnerabilities listed in the OWASP Top 10 (2021) through a penetration test 
+  conducted on the institutional website of Atitus. With prior authorization from the institution, the penetration testing process will follow the Penetration Testing 
+  Execution Standard (PTES), including reconnaissance, information gathering, exploitation, and the preparation of a report detailing the findings identified during the 
+  assessment. The methodology includes reconnaissance, scanning, exploitation, and validation phases using widely adopted cybersecurity tools. The expected results involve 
+  demonstrating the stages of a penetration testing process, presenting the tests performed and their respective outcomes, and proposing improvements to the platform's web 
+  environment, as well as reporting any vulnerabilities identified. This research seeks to contribute to the education of software developers and security analysts by 
+  einforcing the importance of continuous assessments and structured penetration testing methodologies in the development of robust and secure applications.
+
+Keywords: Information Security; OWASP Top 10; Penetration Testing; Vulnerabilities; Web Applications.
 \end{abstract}
      
 \begin{resumo}
@@ -429,12 +429,40 @@ A seleção de ferramentas buscou cobrir as diferentes fases de um teste de inva
 o setup de infraestrutura requerida para a exposição das aplicações:
 
 \begin{itemize}
-    \item \textbf{Nmap \textbf{\cite{nmap2}}:} Utilizado na fase de reconhecimento mapeamento de portas e serviços.
-    
-    \item \textbf{OWASP ZAP \cite{zap}:} Empregado como proxy de interceptação para analisar o tráfego HTTP/S em ambos os ambientes, permitindo a manipulação de 
-    requisições para testar falhas de injeção, controle de acesso e outras.
-    
+
+
+\item \textbf{Nmap \cite{nmap2}:} O Nmap (Network Mapper) foi utilizado durante a fase de reconhecimento para identificação de hosts ativos, descoberta de portas 
+abertas e detecção de serviços expostos na infraestrutura analisada. A ferramenta permite identificar protocolos em execução, versões de serviços e possíveis 
+tecnologias utilizadas pelo alvo por meio de técnicas de fingerprinting. Essas informações são fundamentais para o mapeamento da superfície de ataque, possibilitando 
+a identificação de vetores de exploração e a priorização de análises posteriores.
+
+% \item \textbf{OWASP ZAP \cite{zap}:} O OWASP Zed Attack Proxy (ZAP) foi empregado como ferramenta principal para análise dinâmica da aplicação web. Atuando como proxy de 
+% interceptação, o ZAP permite capturar, inspecionar e modificar requisições e respostas HTTP/HTTPS trocadas entre o navegador e a aplicação. Além da análise manual, 
+% a ferramenta oferece recursos automatizados de Spider e Active Scan, capazes de identificar vulnerabilidades relacionadas ao OWASP Top 10, como falhas de configuração, 
+% exposição de informações, problemas de autenticação, ausência de cabeçalhos de segurança e possíveis falhas de validação de entrada.
+
+\item \textbf{DNSenum \cite{dnsenum}:} O DNSenum foi utilizado na etapa de enumeração de informações DNS com o objetivo de identificar registros associados ao domínio analisado. 
+A ferramenta realiza consultas automatizadas aos registros DNS, permitindo obter informações como servidores de nomes (NS), servidores de e-mail (MX), endereços IP (A), além de 
+realizar tentativas de descoberta de subdomínios. Os resultados contribuem para a compreensão da infraestrutura exposta e auxiliam na identificação de ativos potencialmente relevantes 
+para a continuidade do processo de reconhecimento.
+
+\item \textbf{DNSDumpster \cite{dnsdumpster}:} O DNSDumpster foi utilizado como ferramenta complementar de reconhecimento passivo. Seu objetivo é reunir informações públicas sobre a 
+infraestrutura do domínio por meio de consultas a diversas fontes abertas (OSINT). A ferramenta permite identificar subdomínios, servidores DNS, servidores de e-mail, endereços IP e 
+relações entre ativos da organização. Essas informações são úteis para ampliar a visibilidade da superfície de ataque sem realizar interações diretas que possam gerar impacto sobre 
+os sistemas analisados.
+
+\item \textbf{WhatWeb \cite{whatweb}:} O WhatWeb foi empregado para a realização de fingerprinting de aplicações web. A ferramenta analisa respostas HTTP e diversos elementos presentes 
+nas páginas para identificar tecnologias utilizadas pela aplicação, incluindo servidores web, frameworks, bibliotecas JavaScript, sistemas de gerenciamento de conteúdo (CMS), mecanismos 
+de autenticação e provedores de serviços externos. O conhecimento dessas tecnologias permite direcionar pesquisas sobre vulnerabilidades conhecidas e compreender melhor a arquitetura da 
+aplicação analisada.
+
+\item \textbf{WafW00f \cite{wafw00f}:} O WafW00f foi utilizado para verificar a presença de mecanismos de proteção do tipo Web Application Firewall (WAF). A ferramenta envia diferentes 
+requisições HTTP ao alvo e analisa os padrões de resposta para identificar soluções de segurança implementadas na camada de aplicação. A detecção de tecnologias como Cloudflare ou AWS WAF 
+permite compreender possíveis restrições impostas aos testes, bem como avaliar o nível de proteção existente contra ataques comuns direcionados a aplicações web.
+
+
 \end{itemize}
+
 
 Com base nos Materiais descritos previamente nesta seção, a análise será executada visando obter informações sobre o alvo da instituição, levantar evidencias e relatar eventuais 
 problemas na segurança do site.
@@ -453,269 +481,191 @@ Com o objetivo de identificar tecnologias, serviços expostos e possíveis carac
 foram utilizadas diversas ferramentas amplamente utilizadas no processo de Pentest.
 
 
-\subsubsection{Reunindo informações com WhoIs}
+\textbf{5.1.1 Reunindo informações com WhoIs}
+
 Dentro da etapa de reconhecimento, o atacante busca não apenas obter informações técnicas, mas sim, obter informações sobre o contexto geral do alvo. 
 Tendo isso em vista, ferramentas como o Whois do registro.br, trazem varias informações pertinentes ao processo de Intelligence Gathering. 
 Abaixo, podemos identificar responsáveis pelo dominio "atitus.edu.br", assim como uma empresa, que obteve o dominio em 2013, podendo ser a empresa responsável pelo desenvolvimento.
 Percebe-se também, a presença de dois DNSs apontando para a Cloudfare, indicando a possível existencia de um Web Application Firewall.
 \begin{figure}[H]
-    \label{fig:id_figura}
     \centering
-    \includegraphics[width=1\textwidth]{registroBR.png}
-    \caption{Scan com Nmap}
-    
+    \includegraphics[width=0.8\textwidth]{registroBR.png}
+    \caption{Relatório registro.br}
+    \label{fig:id_figura}
 \end{figure}
 
-\subsubsection{Enumeração de DNS}
+
+
+\textbf{5.1.2 Enumeração de DNS}
 
 Durante a etapa de enumeração DNS, foi utilizada a ferramenta dnsenum com o objetivo de coletar informações relacionadas à infraestrutura do domínio atitus.edu.br, 
-incluindo registros DNS, servidores de nomes (NS) e servidores de e-mail (MX). Apesar de alguns parâmetros informados no comando terem retornado erro de sintaxe 
-(Value "-f" invalid for option s e Unknown option: i), a ferramenta conseguiu realizar parcialmente a enumeração do domínio. Como resultado, foram identificados 
+incluindo registros DNS, servidores de nomes (NS) e servidores de e-mail (MX). A ferramenta conseguiu realizar parcialmente a enumeração do domínio. Como resultado, foram identificados 
 múltiplos endereços IP associados ao domínio principal, todos pertencentes à infraestrutura da Cloudflare, reforçando a presença de proteção WAF no ambiente. 
 Também foram identificados os servidores DNS autoritativos alexis.ns.cloudflare.com e ines.ns.cloudflare.com, reforçando a utilização da Cloudflare como intermediária
  da infraestrutura web. Além disso, a enumeração revelou que o serviço de e-mail da instituição utiliza a infraestrutura do Google Workspace, evidenciada pelos registros 
 MX apontando para aspmx.l.google.com e demais servidores secundários do Google. Essas informações auxiliam no mapeamento inicial da superfície de ataque e na compreensão 
 da arquitetura tecnológica utilizada pelo domínio analisado.
 
-% Figura
-\begin{figure}[H]
-    \label{fig:id_figura}
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=1\textwidth]{dns1.png}
-    \caption{Scan com Nmap}
     
-\end{figure}
-
-% Figura
-\begin{figure}[H]
-    \label{fig:id_figura}
-    \centering
-    \includegraphics[width=1\textwidth]{dns2.png}
-    \caption{Scan com Nmap}
+    \includegraphics[width=\linewidth, height=0.41\textheight, keepaspectratio]{dns1.png}
     
-\end{figure}
-
-\subsubsection{Informações sobre o servidor com NMAP}
-    Dentro do processo de reconhecimento, o Nmap foi usado para obter informações a respeito de portas expostas e serviços por trás dessas portas. 
-O comando utilizado foi "nmap -sV atitus.edu.br", que tem como objetivo identificar portas e serviços expostos à web.
-Na imagem abaixo nota-se que ambas portas 80 e 443 estão expostas, dentro do esperado, pois tratam-se de portas padrões em serviços web.
-Também foi identificada uma porta 8443, que costuma ser uma porta HTTPS secundária.
-
-% Figura
-\begin{figure}[H]
-    \label{fig:id_figura}
-    \centering
-    \includegraphics[width=1\textwidth]{nmap.png}
-    \caption{Scan com Nmap}
+    \vspace{5pt}
     
+    \includegraphics[width=\linewidth, height=0.41\textheight, keepaspectratio]{dns2.png}
+    
+    \caption{Enumeração de DNS}
+    \label{fig:dns}
 \end{figure}
 
 
+Posteriormente, complementando a etapa de reconhecimento realizada com a ferramenta Dnsenum, foi efetuada uma nova consulta utilizando a plataforma DNSDumpster. 
+Essa ferramenta possibilita uma visualização mais intuitiva dos resultados, apresentando uma estrutura hierárquica dos subdomínios associados ao domínio 
+atitus.edu.br. A Figura abaixo ilustra a árvore de relacionamentos identificada durante a análise.
 
-Posteriormente, durante a análise autenticada do portal institucional através das ferramentas de desenvolvedor do navegador Google Chrome, foram identificados os cookies 
-.ASPXAUTH e ASP.NET SessionId, amplamente associados a aplicações desenvolvidas utilizando ASP.NET sobre o .NET Framework. 
-Além disso, o header X-Powered-By: ASP.NET reforçou a hipótese de utilização da stack Microsoft no backend da aplicação. O cookie .ASPXAUTH é tradicionalmente empregado 
-em mecanismos de autenticação Forms Authentication do ASP.NET, indicando gerenciamento de sessão baseado em cookies autenticados no lado servidor.
+\begin{figure}[!htbp]
+    \centering
+    
+    \includegraphics[width=\linewidth, height=0.41\textheight, keepaspectratio]{DNSDUMPSTER.png}
+    
+    \caption{Enumeração via dnsdumpster}
+    \label{fig:dns}
+\end{figure}
+
+A partir da enumeração DNS realizada, observa-se que a infraestrutura da instituição encontra-se predominantemente protegida pelo 
+serviço de Web Application Firewall (WAF) da Cloudflare, conforme evidenciado nas análises anteriores.
+
+Entretanto, apesar de a maior parte dos subdomínios identificados estar sob essa camada de proteção, três deles apresentaram assinaturas 
+distintas, não demonstrando indícios da utilização de um WAF. Os subdomínios \texttt{faixabixo.atitus.edu.br} e \texttt{faixadealuno.atitus.edu.br} 
+exibiram fingerprints compatíveis com servidores HTTP Apache. Já o subdomínio \texttt{health.atitus.edu.br} apresentou características associadas à 
+plataforma Netlify, amplamente utilizada para hospedagem e distribuição de aplicações web.
+
+A identificação desses ativos é relevante no contexto da análise de superfície de ataque, uma vez que recursos não protegidos por mecanismos 
+de filtragem e mitigação, como um WAF, podem estar mais diretamente expostos a requisições externas e a possíveis tentativas de exploração.
+
+\begin{figure}[H]
+    \centering
+    
+    \includegraphics[width=\linewidth, height=0.41\textheight, keepaspectratio]{dnsdumpster2.png}
+    
+    \caption{Enumeração via dnsdumpster}
+    \label{fig:dns}
+\end{figure}
+
+
+
+\textbf{5.1.3 Informações sobre o servidor com NMAP}
+
+Durante a fase de reconhecimento, a ferramenta Nmap foi empregada com o objetivo de identificar portas expostas e os serviços associados ao domínio analisado. 
+Para isso, foi utilizado o comando \texttt{nmap -sV atitus.edu.br}, em que o parâmetro \texttt{-sV} habilita a detecção de versões dos serviços em execução nas portas encontradas. 
+Essa funcionalidade permite identificar não apenas o tipo de serviço disponível, mas também, quando possível, sua versão específica, fornecendo informações relevantes para a 
+caracterização da infraestrutura e para a identificação de potenciais vulnerabilidades associadas às tecnologias utilizadas.
+
+Conforme apresentado na figura a seguir, foram identificadas durante o scan no dominio \texttt{atitus.edu.br} as portas \texttt{80/TCP} e \texttt{443/TCP} como abertas. 
+Esse resultado era esperado, uma vez que essas portas são tradicionalmente utilizadas para a disponibilização de serviços web por meio dos protocolos HTTP e HTTPS, respectivamente.
+
+Além dessas, foi identificada a porta \texttt{8443/TCP} aberta. Essa porta é frequentemente utilizada como uma alternativa para serviços HTTPS, sendo comum em painéis administrativos, 
+aplicações web específicas e serviços que operam em canais seguros distintos da porta padrão 443. 
+A presença dessa porta indica a possibilidade de serviços adicionais expostos na infraestrutura analisada, justificando investigações complementares para sua correta identificação.
+
 % Figura
 \begin{figure}[H]
     \label{fig:id_figura}
     \centering
-    \includegraphics[width=1\textwidth]{aspnet.png}
+    \includegraphics[width=0.8\textwidth]{nmap.png}
+    \caption{Scan com Nmap}
+\end{figure}
+
+Com o objetivo de aprofundar a análise dos ativos identificados durante a enumeração de subdomínios, foi realizado um escaneamento no host \texttt{faixabixo.atitus.edu.br} 
+utilizando o comando \texttt{nmap -sV}. O parâmetro \texttt{-sV} foi empregado para permitir a identificação dos serviços em execução e, quando possível, de suas respectivas versões.
+
+Conforme observado na Figura 8, foram identificadas diversas portas TCP abertas. Grande parte dessas portas foi identificada pelo Nmap como \texttt{tcpwrapped}, 
+indicando que os serviços responderam às sondagens iniciais, porém restringiram a obtenção de informações adicionais sobre sua implementação. 
+Esse comportamento é comum em ambientes que utilizam mecanismos de controle de acesso ou filtragem de conexões.
+
+Além disso, foi identificada a porta \texttt{3306/TCP} associada ao serviço MySQL. Embora o Nmap tenha reconhecido a presença do banco de dados, 
+a resposta obtida indicou que o acesso não autorizado é restringido, conforme evidenciado pela assinatura 
+\texttt{MySQL (unauthorized)}. Ainda assim, a exposição desse serviço à Internet merece atenção, uma vez que bancos de dados normalmente são 
+destinados ao uso interno da infraestrutura e sua disponibilidade pública pode ampliar a superfície de ataque da organização.
+
+
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=0.8\textwidth]{nmap2.png}
+    \caption{Scan com Nmap faixabixo.atitus.edu.br}
+\end{figure}
+
+\textbf{5.1.4 Fingerprinting de Tecnologias e WhatWeb}
+
+Para identificar as tecnologias usadas pela aplicação web da instituição, foi usada a ferramenta WhatWeb. Essa ferramenta realiza o processo de fingerprinting de 
+aplicações web ao analisar cabeçalhos HTTP, conteúdo HTML, bibliotecas carregadas e outros elementos nas respostas do servidor.
+
+A execução do comando \texttt{whatweb atitus.edu.br} permitiu descobrir várias informações importantes sobre a infraestrutura da aplicação. Primeiro, notou-se que 
+o domínio principal redireciona permanentemente (HTTP 308) para a versão segura do site usando HTTPS. Isso mostra que a comunicação entre cliente e servidor é criptografada.
+
+A análise também revelou que a aplicação está protegida pela plataforma Cloudflare, detectada pelos cabeçalhos específicos retornados pelo servidor. O uso desse serviço 
+indica a presença de medidas adicionais de segurança, como proteção contra ataques de negação de serviço (DDoS), cache distribuído e funcionalidades típicas de um firewall 
+para aplicações web (WAF).
+Outro ponto identificado foi o cabeçalho \texttt{X-Powered-By: Next.js}, que indica que a aplicação foi desenvolvida com o framework Next.js.
+
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=0.8\textwidth]{whatwebatitus.png}
+    \caption{Whatweb em atitus.edu.br}
+\end{figure}
+
+
+Também foi encontrado o cabeçalho \texttt{Strict-Transport-Security (HSTS)}, configurado com o valor \texttt{max-age=63072000}. Essa configuração é uma boa prática de segurança, 
+pois força os navegadores a se conectarem apenas por HTTPS durante o período especificado. Isso reduz os riscos de ataques do tipo downgrade e interceptação de tráfego.
+
+Além das tecnologias observadas no domínio principal, foi feita uma análise do subdomínio \texttt{faixabaixo.atitus.edu.br}, que, por não estar sob a proteção de um WAF, pode possuir uma 
+superfície de ataque maior. Os resultados mostraram o uso do servidor web 
+Apache e a plataforma WordPress como sistema de gerenciamento de conteúdo (CMS). Também foram encontrados componentes relacionados à plataforma Complianz, 
+utilizada comumente como plugin WordPress.
+
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=0.8\textwidth]{whatwebSub.png}
+    \caption{Whatweb em faixabixo.atitus.edu.br}
+\end{figure}
+
+
+Durante a fase de reconhecimento, o subdomínio \texttt{portaleducacional.atitus.edu.br} foi identificado por meio das técnicas de enumeração de DNS empregadas ao 
+longo da pesquisa. Posteriormente, durante a análise autenticada do portal educacional utilizando as ferramentas de desenvolvedor do Google Chrome, foram identificados 
+os cookies \texttt{.ASPXAUTH} e \texttt{ASPNET SessionId}, frequentemente associados a aplicações desenvolvidas com ASP.NET sobre o .NET Framework.
+
+A hipótese de utilização da stack Microsoft foi reforçada pela presença do cabeçalho HTTP \texttt{X-Powered-By: ASP.NET}, retornado pelo servidor durante as requisições 
+realizadas à aplicação. Esse cabeçalho fornece indícios sobre a tecnologia empregada no backend e auxilia no processo de fingerprinting da aplicação.
+
+O cookie \texttt{.ASPXAUTH} é tradicionalmente utilizado pelo mecanismo Forms Authentication do ASP.NET para representar sessões autenticadas, indicando que o controle de 
+autenticação é realizado por meio de cookies gerenciados pelo servidor. Já o cookie \texttt{ASPNET SessionId} é utilizado para manter o estado da sessão entre múltiplas 
+requisições HTTP, permitindo a associação das ações realizadas pelo usuário a uma sessão específica.
+
+As evidências coletadas permitiram identificar características relevantes da arquitetura da aplicação, contribuindo para a compreensão das tecnologias utilizadas e fornecendo 
+subsídios para a análise de possíveis vulnerabilidades relacionadas à autenticação, gerenciamento de sessões e configuração da aplicação.
+% Figura
+\begin{figure}[H]
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=0.8\textwidth]{aspnet.png}
     \caption{Ferramenta de desenvolvedor do Chorme}
 \end{figure}
 
-
-\subsection{A01:2021 — Quebra de Controle de Acesso}
-
-Conforme descrito na seção 2.3.1, a Quebra de Controle de Acesso ocorre quando
-as restrições sobre o que usuários autenticados podem fazer não são aplicadas
-corretamente, permitindo acesso a funcionalidades ou dados não autorizados
-(BACH-NUTMAN, 2020). Para verificar a presença dessa vulnerabilidade no portal
-da Atitus, foram realizados testes de navegação forçada e análise de parâmetros
-expostos nas requisições, utilizando o OWASP ZAP como ferramenta de interceptação
-de tráfego HTTP, conforme previsto na seção 4.3.
-
-Durante a análise autenticada com o OWASP ZAP, foram interceptadas requisições
-contendo identificadores de usuário expostos diretamente nos parâmetros, como o
-\texttt{CodUsuario}, identificado previamente na etapa de reconhecimento através das
-ferramentas de desenvolvedor do navegador (Figura 7). A presença desse tipo de
-parâmetro representa um vetor para ataques de referência direta insegura a objetos
-(IDOR), onde um atacante poderia modificar o valor do identificador para acessar
-dados de outros usuários sem autorização.
-
-Adicionalmente, foram testadas rotas protegidas da aplicação acessando-as sem
-sessão ativa, com o objetivo de verificar se o controle de acesso era aplicado
-corretamente pelo servidor. Os testes foram realizados a partir da lista de URLs
-mapeadas pelo OWASP ZAP durante a varredura do domínio \texttt{atitus.edu.br}.
+Para listagem de arquivos e pastas que poderiam estar expostos porém ocultos, foi utilizado o feroxbuster. Durante a busca, a estrutura de pastas seguiu o padrão esperado por se tratar 
+de uma aplicação WordPress, não apontando nenhuma falha de segurança.
+O domínio escolhido foi o faixabixo.atitus.edu.br.
 
 \begin{figure}[H]
-  \centering
-  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}
-    \textbf{[FIGURA 8]} \\
-    \textit{OWASP ZAP — requisições interceptadas com parâmetros de usuário expostos}
-  \vspace{2.5cm}}}
-  \caption{Interceptação de requisições com OWASP ZAP}
-  \label{fig:zap_a01}
+    \label{fig:id_figura}
+    \centering
+    \includegraphics[width=0.8\textwidth]{feroxbuster.png}
+    \caption{Scan com feroxbuster}
 \end{figure}
-
-\begin{figure}[H]
-  \centering
-  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}
-    \textbf{[FIGURA 9]} \\
-    \textit{Tentativa de acesso a rota autenticada sem sessão ativa — resposta do servidor}
-  \vspace{2.5cm}}}
-  \caption{Teste de navegação forçada em rota protegida}
-  \label{fig:forced_a01}
-\end{figure}
-
-Os resultados obtidos foram analisados com base nos critérios do OWASP Top 10
-(2021). A exposição de identificadores sequenciais em parâmetros de URL, sem
-validação de titularidade no servidor, representa uma falha classificada como
-A01:2021, podendo permitir que um usuário autenticado acesse dados pertencentes
-a outro usuário simplesmente alterando o valor do parâmetro. Como medida de
-mitigação, o OWASP (2021) recomenda que o servidor valide, em cada requisição,
-se o usuário autenticado possui permissão sobre o recurso solicitado, e não apenas
-se possui uma sessão ativa.
-
-% ============================================================
-\subsection{A02:2021 — Falhas Criptográficas}
-% ============================================================
-
-Conforme apresentado na seção 2.3.2, as Falhas Criptográficas ocorrem quando
-dados são transmitidos ou armazenados sem a devida proteção criptográfica,
-expondo informações sensíveis a interceptação (JOSEPH, 2024). Nesta etapa,
-foram analisados os mecanismos de proteção criptográfica presentes na comunicação
-do portal institucional da Atitus, com foco nos cabeçalhos HTTP de segurança e
-nas configurações dos cookies de sessão identificados durante o reconhecimento.
-
-Durante a análise realizada com as ferramentas de desenvolvedor do navegador
-Google Chrome — já utilizada na etapa de reconhecimento e documentada na
-Figura 7 — foram identificados os cookies \texttt{.ASPXAUTH} e
-\texttt{ASP.NET\_SessionId}, associados ao mecanismo de autenticação da
-aplicação. A análise das flags desses cookies permitiu verificar se os atributos
-de segurança \texttt{Secure}, \texttt{HttpOnly} e \texttt{SameSite} estavam
-corretamente configurados, uma vez que a ausência de qualquer um deles representa
-uma falha criptográfica com potencial de expor a sessão do usuário.
-
-Complementarmente, o OWASP ZAP foi utilizado para inspecionar os cabeçalhos
-HTTP retornados pelo servidor nas respostas às requisições realizadas durante
-a navegação no portal. Cabeçalhos de segurança como
-\texttt{Strict-Transport-Security}, \texttt{Content-Security-Policy} e
-\texttt{X-Content-Type-Options} são recomendados pelo OWASP (2021) como camadas
-adicionais de proteção criptográfica e de integridade do conteúdo transmitido.
-
-\begin{figure}[H]
-  \centering
-  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}
-    \textbf{[FIGURA 10]} \\
-    \textit{Flags dos cookies \texttt{.ASPXAUTH} e \texttt{ASP.NET\_SessionId} —
-    Chrome DevTools}
-  \vspace{2.5cm}}}
-  \caption{Análise das flags de segurança dos cookies de sessão}
-  \label{fig:cookies_a02}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}
-    \textbf{[FIGURA 11]} \\
-    \textit{Cabeçalhos HTTP de resposta analisados pelo OWASP ZAP —
-    presença ou ausência de cabeçalhos de segurança}
-  \vspace{2.5cm}}}
-  \caption{Análise de cabeçalhos HTTP de segurança via OWASP ZAP}
-  \label{fig:headers_a02}
-\end{figure}
-
-Também foi observado, durante o reconhecimento, que o servidor retorna o cabeçalho
-\texttt{X-Powered-By: ASP.NET}, conforme identificado na análise das ferramentas
-de desenvolvedor (Figura 7). Embora não configure uma falha criptográfica direta,
-esse cabeçalho representa um vazamento de informação sobre a tecnologia de backend,
-facilitando o direcionamento de ataques específicos à plataforma ASP.NET. O OWASP
-(2021) recomenda a remoção de cabeçalhos que exponham informações sobre a
-infraestrutura da aplicação.
-
-% ============================================================
-\subsection{A07:2021 — Falhas de Identificação e Autenticação}
-% ============================================================
-
-Conforme descrito na seção 2.3.7, as Falhas de Identificação e Autenticação
-englobam problemas relacionados ao processo de autenticar usuários e gerenciar
-sessões de forma segura, incluindo ausência de limitação de tentativas de login,
-senhas fracas e mecanismos inseguros de recuperação de senha (OWASP, 2021).
-Para verificar a presença dessas falhas no portal da Atitus, foram realizados
-testes manuais no formulário de autenticação, com foco no comportamento da
-aplicação diante de tentativas de login inválidas.
-
-O primeiro teste consistiu em verificar se as mensagens de erro retornadas pelo
-portal diferenciavam entre um usuário inexistente e uma senha incorreta para um
-usuário válido. Segundo Silva e Borges (2022), citados na seção 2.3.7, a maior
-parte dos incidentes relacionados a falhas de autenticação ocorre devido a
-implementações incorretas de mecanismos básicos, incluindo mensagens de erro
-que revelam a existência de um usuário no sistema, possibilitando a enumeração
-de contas cadastradas.
-
-\begin{figure}[H]
-  \centering
-  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}
-    \textbf{[FIGURA 12]} \\
-    \textit{Mensagem de erro exibida pelo portal após tentativa de login
-    com credenciais inválidas}
-  \vspace{2.5cm}}}
-  \caption{Análise da mensagem de erro no formulário de autenticação}
-  \label{fig:login_a07}
-\end{figure}
-
-O segundo teste avaliou a existência de mecanismo de bloqueio de conta após
-múltiplas tentativas consecutivas de login inválidas. Foram realizadas tentativas
-repetidas com credenciais incorretas, observando o comportamento da aplicação
-a cada requisição. A ausência de bloqueio ou de qualquer mecanismo de limitação
-de tentativas representa uma falha classificada como A07:2021, pois viabiliza
-ataques de força bruta contra as credenciais dos usuários.
-
-\begin{figure}[H]
-  \centering
-  \fbox{\parbox{0.85\textwidth}{\centering\vspace{2.5cm}
-    \textbf{[FIGURA 13]} \\
-    \textit{Comportamento da aplicação após múltiplas tentativas de login
-    inválidas consecutivas}
-  \vspace{2.5cm}}}
-  \caption{Teste de limitação de tentativas de autenticação}
-  \label{fig:lockout_a07}
-\end{figure}
-
-Vale destacar que, conforme identificado durante o reconhecimento, o domínio
-\texttt{atitus.edu.br} utiliza a infraestrutura da Cloudflare como camada de
-proteção, evidenciada pelos servidores DNS \texttt{alexis.ns.cloudflare.com} e
-\texttt{ines.ns.cloudflare.com} (Figura 4). Essa camada de proteção atua como
-um Web Application Firewall (WAF), podendo bloquear tentativas automatizadas
-de força bruta antes que estas atinjam o servidor de aplicação. No entanto, a
-presença do WAF não substitui a implementação de controles de autenticação
-adequados na própria aplicação, uma vez que ataques manuais ou de baixa
-frequência podem não ser interceptados por essa camada.
-
-Como medidas de mitigação, o OWASP (2021) recomenda a adoção de autenticação
-multifator, a utilização de hashes seguros para armazenamento de senhas, a
-renovação do identificador de sessão após o login e o registro detalhado de
-tentativas mal-sucedidas de acesso, em consonância com o que foi apresentado
-na seção 2.3.7 deste trabalho.
-
-% ============================================================
-\subsection{Consolidação dos Resultados}
-% ============================================================
-
-A Tabela~\ref{tab:consolidado} apresenta um resumo dos principais achados
-obtidos durante o pentest realizado no portal institucional da Atitus, organizados
-pelas categorias do OWASP Top 10 analisadas neste trabalho.
-
-
-Os resultados obtidos nas três categorias analisadas evidenciam pontos de atenção
-na aplicação institucional da Atitus, os quais, em conjunto com a camada de
-proteção do WAF Cloudflare identificada durante o reconhecimento, permitem uma
-avaliação abrangente da postura de segurança do portal. As recomendações de
-mitigação estão alinhadas com as diretrizes do OWASP Top 10 (2021) e com as
-boas práticas apresentadas no referencial teórico deste trabalho.
-
-\end{document}
 
 
 
